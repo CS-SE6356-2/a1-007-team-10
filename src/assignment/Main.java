@@ -12,12 +12,12 @@ class NamePrinter {
      * Prints the names of the group members separated by '-'.
      */
     public void printNames() {
-        String separator = "-";
+        String separator = ",";
 
         String[] names = {
                 "John D'Angelo",
                 "Christina Mai",
-                "Name 3",
+                "Cole Flandorfer",
                 "Name 4",
                 "Name 5"};
 
