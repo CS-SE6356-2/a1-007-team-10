@@ -18,8 +18,7 @@ class NamePrinter {
                 "John D'Angelo",
                 "Christina Mai",
                 "Cole Flandorfer",
-                "Cole Flandorfer",
-                "Name 5"};
+                "Steven Johnson"};
 
         System.out.println(String.join(separator, names));
     }
