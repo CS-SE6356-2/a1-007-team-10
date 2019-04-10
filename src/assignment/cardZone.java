@@ -1,17 +1,39 @@
 package assignment;
 
+import java.util.List;
+
 public class cardZone {
-	private Card[] cardList;
-	private boolean visible;
-	private int size;
+	//fields
+	protected List<Card> cardList = new List<Card>();
+	public boolean visible; //make private and make getter/setter?
+	protected int size;
 	
-	public boolean moveTo(cardZone zone) {
-		return;
+	//constructors
+	cardZone(){
+		size = 0;
+		visible = false;	
 	}
-	public boolean moveCard(Card card, cardZone zone) {
-		return;
+	cardZone(int s){
+		size = s;
+		for(int i = 0; i < size; i++) {
+			cardList.add(new Card());
+		}
+		visible = false;
 	}
-	public CardList[] check() {
-		return;
+	
+	
+	//methods
+	// what is this again?
+	public boolean moveTo(cardZone cz) {
+		return true;
+	}
+	
+	public boolean moveCard(Card c, cardZone cz) {
+		cz.cardList.add(c);
+		return true;
+	}
+	
+	public List<Card> checkCardZone() {
+		return cardList;
 	}
 }
