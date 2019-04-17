@@ -2,61 +2,52 @@ package assignment;
 
 public class Player {
 	public String name = "";
-	// public Hand hand;
-	// private Deck drawPile;
-	// private Deck playPile;
-	public Object getHand;
-
+	public Hand hand;
+	private Deck drawPile;
+	private Deck playPile;
+	
+	
 	public Player() {
-		// ...
+		System.out.println("Player constructor should be called with arguments.");
 	}
-
-	public Player (String n/*, Hand h, Deck dp, Deck pp*/) {
+	
+	public Player (String n, Hand h, Deck dp, Deck pp) {
 		name = n;
-		// hand = h;
-		// drawPile = dp;
-		// playPile = pp;
+		hand = h;
+		drawPile = dp;
+		playPile = pp;
 	}
-
-
+	
+	
 	// should be named 'moveCard'
-	public boolean MoveCard(Card c/*, cardZone from, cardZone to*/) {
+	public boolean MoveCard(Card c, cardZone from, cardZone to) {
 
 
 		return false;
 	}
-
-
-	//methods to connect with Crazy8s
-	public Player get(int i) {
-
-		return null;
-	}
-
-	public int indexOf(Player player) {
-
-		return 0;
-	}
-
+	
+	// Returns ... something?
 	public int size() {
-
-		return 0;
+		return -1;
 	}
-
+	
+	// Returns the Hand object associated with this player
 	public Hand getHand() {
+		return hand;
+	}
+	
+	// Returns the card the player decided to play
+	// Should interface with the GUI
+	public Card play() {
 		return null;
 	}
-
-	public Player display() {
-
-		return null;
-	}
-
-	public Crazy8s play(Crazy8s crazy8s, Crazy8s prev) {
-		return null;
-	}
-
+	
+	// Returns the name of this player
 	public String getName() {
-		return null;
+		return name;
+	}
+	
+	public String toString() {
+		return name + ": " + hand.toString();
 	}
 }
