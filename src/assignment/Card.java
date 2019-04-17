@@ -5,9 +5,9 @@ public class Card {
 	private int number;
 	public boolean facing;
 
-	public Card() {
-		// ...
-	}
+	
+	// This constructor should not be called
+	public Card() {}
 
 	public Card(int s, int n, boolean f) {
 		suit = s;
@@ -17,13 +17,14 @@ public class Card {
 
 
 	// should be named 'flip'
+	// Changes the 'facing' value to the opposite of what it is currently
 	public void Flip() {
-		// do stuff
+		facing = !facing;
 	}
 
 	// the following three methods should be renamed as 'getSuit' or 'getNumber'
+	// Returns the integer representation of the suit of this card
 	public int CheckSuit() {
-
 		return suit;
 	}
 	// what is the purpose of passing a player here?
@@ -32,6 +33,7 @@ public class Card {
 		return suit;
 	}
 
+	// Returns the integer representation of the number of this card
 	public int CheckNumber() {
 		return number;
 	}
