@@ -1,10 +1,10 @@
 package assignment;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class cardZone {
 	//fields
-	protected List<Card> cardList = new List<Card>();
+	protected ArrayList<Card> cardList = new ArrayList<Card>();
 	public boolean visible; //make private and make getter/setter?
 	protected int size;
 	
@@ -33,7 +33,7 @@ public class cardZone {
 		return true;
 	}
 	
-	public List<Card> checkCardZone() {
+	public ArrayList<Card> checkCardZone() {
 		return cardList;
 	}
 }

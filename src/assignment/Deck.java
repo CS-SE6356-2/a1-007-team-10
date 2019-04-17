@@ -20,7 +20,7 @@ public class Deck extends cardZone{
 
 	// a fisher yates shuffle
 	// needs a toString method to return back to crazy8s
-	void shuffle() {
+	public void shuffle() {
 		int index;
 		Card temp;
 	    Random random = new Random();
