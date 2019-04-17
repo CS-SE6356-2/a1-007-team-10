@@ -2,17 +2,19 @@ package assignment;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// why are there multiple Crazy8s instances being created within this class?
 public class Crazy8s { 				// action event listener variables and methods will need to be added
 	private Hand drawPile; 			// this is a barebones text based user interface for later merging/testing purposes
 	private Hand discardPile;
 	private Scanner in;
-	private Player players;
+	private ArrayList<Player> players;
 
+	
 	public Crazy8s() {
 		Deck deck = new Deck();
 		deck.shuffle();
 
-		this.players = new Hand("Discard Pile");
+		this.discardPile = new Hand("Discard Pile");
 		deck.deal(discardPile, 1);
 
 		drawPile = new Hand("Draw new card");
@@ -20,58 +22,57 @@ public class Crazy8s { 				// action event listener variables and methods will n
 
 		in = new Scanner(System.in);
 	}
+	
 
-	public void createPlayer(Crazy8s player) {
-		player.add(player);
+	public void createPlayer(Player player) {
+		players.add(player);
 	}
-
-	private void add(Crazy8s player) {
-
-	}
-
+	
+	//What is the purpose of this method?
 	public void drawCards() {
-		Object player = null;
-		drawPile.deal(((Player) player).getHand(), 5);
+		//Object player = null;
+		//drawPile.deal(((Player) player).getHand(), 5);
 	}
-
+	
 	public Player getPlayer(int i) {
 		return players.get(i);
 	}
-
+	
+	// Returns the index of the given player object in the internal player list
 	public int getPlayerIndex(Player player) {
 		return players.indexOf(player);
 	}
-
-	public boolean isEmpty() {
+	
+	// Returns true if any players hand is empty
+	public boolean isDone() {
 		for (int x = 0; x < players.size(); x++) {
-			if (((Hand) getPlayer(x).getHand).empty()) {
+			if (getPlayer(x).getHand().empty()) {
 				return true;
 			}
 		}
 		return false;
 	}
 
-	  public boolean isDone() {
-		    for (int x = 0; x < players.size(); x++) {
-		      if (getPlayer(x).getHand().empty()) {
-		        return true;
-		      }
-		    }
-		    return false;
-		  }
-
-	public Player nextPlayer(Player player) {
-		if (getPlayerIndex(player) < players.size() - 1) {
-			return getPlayer(getPlayerIndex(player) + 1);
+	// Returns the player object that will have the turn after the player passed to the method
+	public Player nextPlayer(Player current) {
+		// If the current player is not the last one
+		if(getPlayerIndex(current) < players.size() - 1) {
+			return getPlayer(getPlayerIndex(current) + 1);
 		}
-		if (getPlayerIndex(player) == players.size() - 1) {
-			int x = 0;
-			return getPlayer(x).display();
+		// If the player is the last one
+		if(getPlayerIndex(current) == players.size()) {
+			return players.get(0);
 		}
+		
+		/*
+		none of this should be accessible, right?
+		 
 		discardPile.display();
 		System.out.print("Draw pile: ");
 		System.out.println(drawPile.size() + " cards");
-		return players;
+		*/
+		
+		return null;
 	}
 
 	public void waitForUser() {
@@ -79,53 +80,59 @@ public class Crazy8s { 				// action event listener variables and methods will n
 	}
 
 	// computer or human player takes next turn
+	// nani?
 	public void takeTurn(Player player) {
 		Card convert = discardPile.returnLast();
 
 		Crazy8s prev = new Crazy8s();
 		prev = prev.convert(convert);
 
-		Crazy8s next = player.play(this, prev);
-		discardPile.addCard(next);
+		//Crazy8s next = player.play(this, prev);
+		//discardPile.addCard(next);
 
-		System.out.println(player.getName() + " plays " + next);
+		//System.out.println(player.getName() + " plays " + next);
 	}
-
+	
+	//what is this supposed to do
 	private Crazy8s convert(Card convert) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	// user plays game
 	// this will need to be replaced with GUI
 	public void playGame() {
 		System.out.println("Crazy Eights!");
 		System.out.println("Enter number of players(2-4): ");
-
+		
 		int numOfPlayers = in.nextInt();
-		while (numOfPlayers > 4 || numOfPlayers < 2) {
+		while(numOfPlayers > 4 || numOfPlayers < 2) {
 			System.err.println("Error: Number of players must be between 2 and 4.");
 			System.out.println("Enter number of players again: ");
 			numOfPlayers = in.nextInt();
 		}
-
-		for (int i = 0; i < numOfPlayers; i++) {
-			Player player = new Player();
+		
+		for(int i = 0; i < numOfPlayers; i++) {
+			// this needs the data for each player
+			players.add(new Player());
 		}
+		
 		Player player = getPlayer(0);
-
-		while (!isDone()) {
+		
+		// Main game loop
+		while(!isDone()) {
 			displayState();
 			waitForUser();
 			takeTurn(player);
 			player = nextPlayer(player);
 		}
 
-		for (int x = 0; x < players.size(); x++) {
-			getPlayer(x).display();
+		//what is this supposed to do?
+		for(int i = 0; i < players.size(); i++) {
+			getPlayer(i).getName();
 		}
 	}
-
+	
 	private void displayState() {
 
 	}
