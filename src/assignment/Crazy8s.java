@@ -9,40 +9,54 @@ public class Crazy8s { 				// action event listener variables and methods will n
 	private Scanner in;
 	private ArrayList<Player> players;
 
-	
+
 	public Crazy8s() {
 		Deck deck = new Deck();
 		deck.shuffle();
 
-		this.discardPile = new Hand("Discard Pile");
+		int handSize = 5;
+		for (int i=0; i<numOfPlayers; i++) {
+			deck.deal(players[i].getHand(), handSize);
+		}
+
+		discardPile = new Hand("Discard Pile: ");
 		deck.deal(discardPile, 1);
 
-		drawPile = new Hand("Draw new card");
+		drawPile = new Hand("Draw Pile: ");
 		deck.dealAll(drawPile);
 
 		in = new Scanner(System.in);
 	}
-	
+
 
 	public void createPlayer(Player player) {
 		players.add(player);
 	}
-	
+
+// switches to next player
+	public Player nextPlayer(Player current) {
+		if (current == one) {
+				return two;
+		} else {
+				return one;
+		}
+}
+
 	//What is the purpose of this method?
 	public void drawCards() {
 		//Object player = null;
 		//drawPile.deal(((Player) player).getHand(), 5);
 	}
-	
+
 	public Player getPlayer(int i) {
 		return players.get(i);
 	}
-	
+
 	// Returns the index of the given player object in the internal player list
 	public int getPlayerIndex(Player player) {
 		return players.indexOf(player);
 	}
-	
+
 	// Returns true if any players hand is empty
 	public boolean isDone() {
 		for (int x = 0; x < players.size(); x++) {
@@ -63,15 +77,15 @@ public class Crazy8s { 				// action event listener variables and methods will n
 		if(getPlayerIndex(current) == players.size()) {
 			return players.get(0);
 		}
-		
+
 		/*
 		none of this should be accessible, right?
-		 
+
 		discardPile.display();
 		System.out.print("Draw pile: ");
 		System.out.println(drawPile.size() + " cards");
 		*/
-		
+
 		return null;
 	}
 
@@ -92,33 +106,33 @@ public class Crazy8s { 				// action event listener variables and methods will n
 
 		//System.out.println(player.getName() + " plays " + next);
 	}
-	
+
 	//what is this supposed to do
 	private Crazy8s convert(Card convert) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	// user plays game
 	// this will need to be replaced with GUI
 	public void playGame() {
 		System.out.println("Crazy Eights!");
 		System.out.println("Enter number of players(2-4): ");
-		
+
 		int numOfPlayers = in.nextInt();
 		while(numOfPlayers > 4 || numOfPlayers < 2) {
 			System.err.println("Error: Number of players must be between 2 and 4.");
 			System.out.println("Enter number of players again: ");
 			numOfPlayers = in.nextInt();
 		}
-		
+
 		for(int i = 0; i < numOfPlayers; i++) {
 			// this needs the data for each player
 			players.add(new Player());
 		}
-		
+
 		Player player = getPlayer(0);
-		
+
 		// Main game loop
 		while(!isDone()) {
 			displayState();
@@ -128,11 +142,18 @@ public class Crazy8s { 				// action event listener variables and methods will n
 		}
 
 		//what is this supposed to do?
-		for(int i = 0; i < players.size(); i++) {
-			getPlayer(i).getName();
-		}
+		//for(int i = 0; i < players.size(); i++) {
+		//	getPlayer(i).getName();
+		//}
 	}
-	
+
+	public boolean isDone() {
+		for (int i=0; i<numOfPlayers; i++) {
+			return players[i].getHand().empty() || players[i+1].getHand().empty();
+		}
+
+}
+
 	private void displayState() {
 
 	}
