@@ -2,11 +2,10 @@ package assignment;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Hand extends cardZone {
+public class Hand extends cardZone{
 	private String label;
 	private ArrayList<Card> cards;
-	
-	
+
 	public Hand (String label) {
 		this.label = label;
 		this.cards = new ArrayList<Card>();
@@ -68,12 +67,13 @@ public class Hand extends cardZone {
 		}
 	}
 	
-	public String toString() {									//temp toString
+	public String toString() {
 		return label + ": " + cards.toString();
 	}
 	
+	//method will need to be replaced with GUI connector
 	// ?
-	public void display() {										//method will need to be replaced with GUI connector
+	public void display() {
 		System.out.println(label + ": ");
 		for (Card card: cards) {
 			System.out.println(card);

@@ -2,10 +2,11 @@ package assignment;
 
 import java.util.Random;
 
-public class Deck extends cardZone{
+public class Deck extends cardZone {
 	// Fields
 	private Card topCard;
-	private Card bottomCard; // do we need this anymore?
+	//do we need this anymore?
+	private Card bottomCard;
 	
 	// Constructor
 	Deck() {
@@ -46,7 +47,7 @@ public class Deck extends cardZone{
 		int index;
 		Card temp;
 	    Random random = new Random();
-	    
+
 	    for (int i = cardList.size(); i > 0; i--)
 	    {
 	        index = random.nextInt(i + 1);
