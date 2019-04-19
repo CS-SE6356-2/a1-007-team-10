@@ -1,9 +1,13 @@
 package assignment;
 
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.wb.swt.SWTResourceManager;
+
 public class Card {
 	private int suit;
 	private int number;
 	public boolean facing;
+	private Image cardImage;
 	//private Image pic;
 
 	
@@ -15,6 +19,7 @@ public class Card {
 		number = n;
 		facing = f;
 		//get image
+		cardImage = SWTResourceManager.getImage(Card.class, "/testImages/tempCard.png"); //The first parameter of this may need to change as I'm not sure exactly what it does
 	}
 	
 	
@@ -40,8 +45,8 @@ public class Card {
 	}
 	
 	// Returns the image associated with this card
-	public void/*Image*/ getImage() {
-		//return image;
+	public Image getImage() {
+		return cardImage;
 	}
 
 }

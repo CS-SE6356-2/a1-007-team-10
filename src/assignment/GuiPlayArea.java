@@ -29,20 +29,12 @@ public class GuiPlayArea extends Composite {
 		lblHand.setText("Hand");
 		
 		Label card1 = new Label(handArea, SWT.BORDER);
-		card1.setBounds(31, 29, 75, 89);
-		card1.setText("Card1");
+		card1.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		card1.setBounds(31, 29, 75, 90);
 		
 		Label card2 = new Label(handArea, SWT.BORDER);
-		card2.setText("Card");
-		card2.setBounds(134, 29, 75, 89);
-		
-		Label card3 = new Label(handArea, SWT.BORDER);
-		card3.setText("Card");
-		card3.setBounds(238, 29, 75, 89);
-		
-		Label card4 = new Label(handArea, SWT.BORDER);
-		card4.setText("Card");
-		card4.setBounds(345, 29, 75, 89);
+		card2.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		card2.setBounds(134, 28, 75, 90);
 		
 		Label cardCountActive = new Label(handArea, SWT.NONE);
 		cardCountActive.setBounds(31, 0, 55, 15);
@@ -67,6 +59,18 @@ public class GuiPlayArea extends Composite {
 		Button choose5 = new Button(handArea, SWT.NONE);
 		choose5.setText("Choose");
 		choose5.setBounds(450, 124, 75, 25);
+		
+		Label card3 = new Label(handArea, SWT.BORDER);
+		card3.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		card3.setBounds(238, 29, 75, 90);
+		
+		Label card4 = new Label(handArea, SWT.BORDER);
+		card4.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		card4.setBounds(345, 29, 75, 90);
+		
+		Label card5 = new Label(handArea, SWT.BORDER);
+		card5.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		card5.setBounds(450, 29, 75, 90);
 		
 		Composite playArea = new Composite(this, SWT.NONE);
 		playArea.setBackground(SWTResourceManager.getColor(107, 142, 35));
@@ -96,13 +100,13 @@ public class GuiPlayArea extends Composite {
 		btnDraw.setBounds(387, 158, 75, 25);
 		btnDraw.setText("Draw");
 		
-		Label discard = new Label(playArea, SWT.BORDER);
-		discard.setText("Card");
-		discard.setBounds(494, 57, 75, 89);
+		Label deckImage = new Label(playArea, SWT.BORDER);
+		deckImage.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		deckImage.setBounds(387, 63, 75, 90);
 		
-		Label deck = new Label(playArea, SWT.BORDER);
-		deck.setText("Card");
-		deck.setBounds(387, 57, 75, 89);
+		Label discardImage = new Label(playArea, SWT.BORDER);
+		discardImage.setImage(SWTResourceManager.getImage(GuiPlayArea.class, "/testImages/tempCard.png"));
+		discardImage.setBounds(493, 63, 75, 90);
 		
 		Composite scoreArea = new Composite(this, SWT.NONE);
 		scoreArea.setBackground(SWTResourceManager.getColor(102, 205, 170));
