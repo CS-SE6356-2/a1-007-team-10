@@ -18,7 +18,7 @@ public class Card {
 		suit = s;
 		number = n;
 		facing = f;
-		//get image
+		//get Image from disk
 		cardImage = SWTResourceManager.getImage(Card.class, "/testImages/tempCard.png"); //The first parameter of this may need to change as I'm not sure exactly what it does
 	}
 	
