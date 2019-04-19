@@ -10,13 +10,13 @@ public class cardZone {
 	
 	//constructors
 	cardZone(){
-		size = 0;
-		visible = false;	
+		this.size = 0;
+		this.visible = false;	
 	}
 	cardZone(int s){
-		size = s;
+		this.size = s;
 		for(int i = 0; i < size; i++) {
-			cardList.add(new Card());
+			this.cardList.add(new Card());
 		}
 		visible = false;
 	}

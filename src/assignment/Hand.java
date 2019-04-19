@@ -4,11 +4,12 @@ import java.util.Random;
 
 public class Hand extends cardZone{
 	private String label;
-	private ArrayList<Card> cards;
+	//should not need new cards if extending cardZone
+	//private ArrayList<Card> cards;
 
 	public Hand (String label) {
 		this.label = label;
-		this.cards = new ArrayList<Card>();
+		//this.cards = new ArrayList<Card>();
 	}
 
 	public String getValue() {
@@ -16,23 +17,23 @@ public class Hand extends cardZone{
 	}
 
 	public Card getCard(int i) {
-		return cards.get(i);
+		return cardList.get(i);
 	}
 
 	public void addCard(Card next) {
-		cards.add(next);
+		cardList.add(next);
 	}
 
 	public Card popCard(int i) {
-		return cards.remove(i);
+		return cardList.remove(i);
 	}
 
 	public int size() {
-		return cards.size();
+		return cardList.size();
 	}
 
 	public boolean empty() {
-		return cards.size() == 0;
+		return cardList.size() == 0;
 	}
 
 	public void deal(Hand that, int n) {
@@ -44,13 +45,13 @@ public class Hand extends cardZone{
 
 	public Card returnLast() {
 		int i = size() - 1;
-		return cards.get(i);
+		return cardList.get(i);
 	}
 
 	public void swapCards(int i, int j) {
-		Card temp = cards.get(i);
-		cards.set(i, cards.get(j));
-		cards.set(j, temp);
+		Card temp = cardList.get(i);
+		cardList.set(i, cardList.get(j));
+		cardList.set(j, temp);
 	}
 
 	public void shuffle() {
@@ -62,12 +63,12 @@ public class Hand extends cardZone{
 	}
 
 	public String toString() {									//temp toString
-		return label + ": " + cards.toString();
+		return label + ": " + cardList.toString();
 	}
 
 	public void display() {										//method will need to be replaced with GUI connector
 		System.out.println(label + ": ");
-		for (Card card: cards) {
+		for (Card card: cardList) {
 			System.out.println(card);
 		}
 		System.out.println();
