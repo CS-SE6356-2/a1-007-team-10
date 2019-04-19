@@ -4,14 +4,14 @@ public class Player {
 	public String name = "";
 	public Hand hand;
 	private Deck drawPile;
-	private Deck playPile;
+	private cardZone playPile;
 	
 	
 	public Player() {
 		System.out.println("Player constructor should be called with arguments.");
 	}
 	
-	public Player (String n, Hand h, Deck dp, Deck pp) {
+	public Player (String n, Hand h, Deck dp, cardZone pp) {
 		name = n;
 		hand = h;
 		drawPile = dp;
@@ -19,10 +19,22 @@ public class Player {
 	}
 	
 	
-	// should be named 'moveCard'
+	// replaced with draw and playCard
+	/*
 	public boolean MoveCard(Card c, cardZone from, cardZone to) {
 
 
+		return false;
+	}
+	*/
+	
+	public boolean playCard(Card c) {
+		
+		return false;
+	}
+	
+	public boolean drawCard() {
+		
 		return false;
 	}
 	
