@@ -7,6 +7,7 @@ public class Player {
 	private cardZone playPile;
 	
 	
+	// This constructor should not be called
 	public Player() {
 		System.out.println("Player constructor should be called with arguments.");
 	}
@@ -18,15 +19,6 @@ public class Player {
 		playPile = pp;
 	}
 	
-	
-	// replaced with draw and playCard
-	/*
-	public boolean MoveCard(Card c, cardZone from, cardZone to) {
-
-
-		return false;
-	}
-	*/
 	
 	// Returns true if the specified card exists and was moved successfully to the playPile, false if the card is not in this player's hand
 	public boolean playCard(Card c) {
