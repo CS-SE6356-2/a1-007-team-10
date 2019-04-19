@@ -28,14 +28,15 @@ public class Player {
 	}
 	*/
 	
+	// Returns true if the specified card exists and was moved successfully to the playPile, false if the card is not in this player's hand
 	public boolean playCard(Card c) {
 		
 		return false;
 	}
 	
+	// Returns true if successfully drew a card from the deck
 	public boolean drawCard() {
-		
-		return false;
+		return drawPile.draw(hand);
 	}
 	
 	// Returns ... something?
