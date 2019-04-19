@@ -24,9 +24,9 @@ public class cardZone {
 	
 	//methods
 	// what is this again?
-	public boolean moveTo(cardZone cz) {
-		return true;
-	}
+	//public boolean moveTo(cardZone cz) {
+		//return true;
+	//}
 	
 	public boolean moveCard(Card c, cardZone cz) {
 		cz.cardList.add(c);
