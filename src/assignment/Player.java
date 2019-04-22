@@ -3,11 +3,11 @@ package assignment;
 public class Player {
 	public String name = "";
 	public Hand hand;
-	//these piles should to be in the main crazy8s class
-	//private Deck drawPile;
-	//private cardZone playPile;
+	private Deck drawPile;
+	private cardZone playPile;
 
 
+	// This constructor should not be called
 	public Player() {
 		System.out.println("Player constructor should be called with arguments.");
 	}
@@ -20,23 +20,15 @@ public class Player {
 	}
 
 
-	// replaced with draw and playCard
-	/*
-	public boolean MoveCard(Card c, cardZone from, cardZone to) {
-
-
-		return false;
-	}
-	*/
-
+	// Returns true if the specified card exists and was moved successfully to the playPile, false if the card is not in this player's hand
 	public boolean playCard(Card c) {
 
 		return false;
 	}
 
+	// Returns true if successfully drew a card from the deck
 	public boolean drawCard() {
-
-		return false;
+		return drawPile.draw(hand);
 	}
 
 	// Returns ... something?

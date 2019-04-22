@@ -8,7 +8,7 @@ public class Crazy8s { 				// action event listener variables and methods will n
 	private Hand discardPile;
 	private Scanner in;
 	private ArrayList<Player> players;
-
+	
 	
 	public Crazy8s() {
 		Deck deck = new Deck();

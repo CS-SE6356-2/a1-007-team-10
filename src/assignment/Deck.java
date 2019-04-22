@@ -1,43 +1,71 @@
 package assignment;
 
-// This class should be used to only create a standard deck of cards
-public class Deck extends cardZone{
-	//fields
-	//private Card topCard;
-	//private Card bottomCard; // do we need this anymore?
+import java.util.Random;
 
-	//constructor
-	public Deck(String label){
-		super(label);
-
-		for (int suit = 0; suit <= 3; suit++) {
-			for (int rank = 1; rank <= 13; rank++) {
-				addCard(new Card(rank, suit));
+public class Deck extends cardZone {
+	// Fields
+	private Card topCard;
+	//do we need this anymore?
+	private Card bottomCard;
+	
+	// Constructor
+	Deck() {
+		fill();
+		
+		topCard = cardList.get(0);
+		// If the deck is empty for any reason, this can throw an IndexOutOfBounds error
+		bottomCard = cardList.get(cardList.size() - 1);
+	}
+	
+	// Methods
+	// Helper method to create a new set of 52 cards to add to the card list
+	private void fill() {
+		// Loop for each suit
+		for(int suit = 0; suit < 4; suit++) {
+			// Loop for each number
+			for(int number = 0; number < 13; number++) {
+				// Add the card to the list
+				cardList.add( new Card(suit, number, false) );
 			}
 		}
-		// topCard = cardList.get(0);
-		// bottomCard = cardList.get(size-1);
 	}
+	
+	// Moves the top card of this deck into the specified hand
+	public boolean draw(Hand hand) {
+		//TODO
+		return false;
+	}
+	
+	// ?
+	public Card checkTop(Player player) {
+		//TODO
+		return topCard;
+	}
+	
+	// Puts the cards in cardList in a random ordering using a Fisher Yates shuffle
+	public void shuffle() {
+		int index;
+		Card temp;
+	    Random random = new Random();
 
-	//methods
-	// cardZone can accomplish this method
-	// public Card checkTop(Player player) {
-	// 	return topCard;
-	// }
-
-	// a fisher yates shuffle
-	// needs a toString method to return back to crazy8s
-	// why do we need this shuffle method since theres already one in cardZone
-	// public void shuffle() {
-	// 	int index;
-	// 	Card temp;
-	//     Random random = new Random();
-	//     for (int i = cardList.size(); i > 0; i--)
-	//     {
-	//         index = random.nextInt(i + 1);
-	//         temp = cardList.get(index);
-	//         cardList.set(index, cardList.get(i));
-	//         cardList.set(i, temp);
-	//     }
-	// }
+	    for (int i = cardList.size(); i > 0; i--)
+	    {
+	        index = random.nextInt(i + 1);
+	        temp = cardList.get(index);
+	        cardList.set(index, cardList.get(i));
+	        cardList.set(i, temp);
+	    }
+	}
+	
+	//methods for connecting to discardPile and drawPile
+	// ?
+	public void deal(Hand discardPile, int i) {
+		//TODO
+	}
+	
+	// ?
+	public void dealAll(Hand drawPile) {
+		//TODO
+	}
+	
 }
