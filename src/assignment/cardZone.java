@@ -61,20 +61,16 @@ public class cardZone{
 		return cards.get(i);
 	}
 
+	public Card getCard(int i) {
+		return cards.get(i);
+	}
+
 	public void swapCards(int i, int j) {
 		Card temp = cards.get(i);
 		cards.set(i, cards.get(j));
 		cards.set(j, temp);
 	}
 
-	public void shuffle() {
-		Random random = new Random();
-		for (int i = size() - 1; i > 0; i--) {
-			int j = random.nextInt(i);
-			swapCards(i, j);
-		}
-	}
-	
 	//methods
 	// what is this again?
 	public boolean moveTo(cardZone cz) {

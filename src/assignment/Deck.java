@@ -19,6 +19,14 @@ public class Deck extends cardZone{
 		// bottomCard = cardList.get(size-1);
 	}
 
+	public void shuffle() {
+		Random random = new Random();
+		for (int i = size() - 1; i > 0; i--) {
+			int j = random.nextInt(i);
+			swapCards(i, j);
+		}
+	}
+
 	//methods
 	// cardZone can accomplish this method
 	// public Card checkTop(Player player) {
