@@ -5,18 +5,23 @@ import java.util.ArrayList;
 public class cardZone {
 	// Fields
 	protected ArrayList<Card> cardList;
+	protected String label;
 	public boolean visible; //make private and make getter/setter?
 	
 	
 	// Constructors
+	//should eventually be deleted
 	cardZone() {
+		System.out.println("cardZone constructor should be called with arguments.");
 		cardList = new ArrayList<Card>();
+		label = "";
 		visible = false;
 	}
 	
-	cardZone(int s, boolean v) {
+	cardZone(int s, String l, boolean v) {
 		cardList = new ArrayList<Card>();
 		cardList.ensureCapacity(s);
+		label = l;
 		visible = v;
 	}
 	
@@ -49,4 +54,7 @@ public class cardZone {
 		return cardList.size() == 0;
 	}
 	
+	public String toString() {
+		return label + ": " + cardList.toString();
+	}
 }

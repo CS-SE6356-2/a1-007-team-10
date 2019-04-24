@@ -3,18 +3,20 @@ package assignment;
 
 public class Hand extends cardZone {
 	// Fields
-	private String label;
-
+	
 	
 	// Constructors
-	public Hand(String label) {
-		this.label = label;
+	//should eventually be deleted
+	public Hand() {
+		super();
 	}
 	
-	public Hand(String label, int s) {
-		super(s, false);
-		
-		this.label = label;
+	public Hand(String l, boolean v) {
+		super(1, l, v);
+	}
+	
+	public Hand(int s, String l, boolean v) {
+		super(s, l, v);
 	}
 	
 	
@@ -45,10 +47,6 @@ public class Hand extends cardZone {
 		Card temp = cardList.get(i);
 		cardList.set(i, cardList.get(j));
 		cardList.set(j, temp);
-	}
-	
-	public String toString() {
-		return label + ": " + cardList.toString();
 	}
 	
 	//method will need to be replaced with GUI connector

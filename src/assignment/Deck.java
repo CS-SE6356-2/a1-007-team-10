@@ -11,8 +11,19 @@ public class Deck extends cardZone {
 	
 	
 	// Constructor
+	//should eventually be deleted
 	Deck() {
-		super(52, true);
+		super();
+		
+		fill();
+		
+		topCard = cardList.get(0);
+		// If the deck is empty for any reason, this can throw an IndexOutOfBounds error
+		bottomCard = cardList.get(cardList.size() - 1);
+	}
+	
+	Deck(String l) {
+		super(52, l, true);
 		fill();
 		
 		topCard = cardList.get(0);
