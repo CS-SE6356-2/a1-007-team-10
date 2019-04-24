@@ -3,13 +3,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // why are there multiple Crazy8s instances being created within this class?
-public class Crazy8s { 				// action event listener variables and methods will need to be added
-	private Hand drawPile; 			// this is a barebones text based user interface for later merging/testing purposes
+// this is a bare-bones text based user interface for later merging/testing purposes
+public class Crazy8s {
+	// Fields
+	// action event listener variables and methods will need to be added
+	private Hand drawPile;
 	private Hand discardPile;
 	private Scanner in;
 	private ArrayList<Player> players;
 	
 	
+	// Constructor
 	public Crazy8s() {
 		Deck deck = new Deck();
 		deck.shuffle();
@@ -23,7 +27,8 @@ public class Crazy8s { 				// action event listener variables and methods will n
 		in = new Scanner(System.in);
 	}
 	
-
+	
+	// Methods
 	public void createPlayer(Player player) {
 		players.add(player);
 	}
