@@ -3,32 +3,37 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 // why are there multiple Crazy8s instances being created within this class?
-public class Crazy8s { 				// action event listener variables and methods will need to be added
-	private Hand drawPile; 			// this is a barebones text based user interface for later merging/testing purposes
+// this is a bare-bones text based user interface for later merging/testing purposes
+public class Crazy8s {
+	// Fields
+	// action event listener variables and methods will need to be added
+	private Hand drawPile;
 	private Hand discardPile;
 	private Scanner in;
 	private ArrayList<Player> players;
 	
 	
+	// Constructor
 	public Crazy8s() {
 		Deck deck = new Deck();
 		deck.shuffle();
 
-		this.discardPile = new Hand("Discard Pile");
+		this.discardPile = new Hand("Discard Pile", false);
 		deck.deal(discardPile, 1);
 
-		drawPile = new Hand("Draw new card");
+		drawPile = new Hand("Draw new card", false);
 		deck.dealAll(drawPile);
 
 		in = new Scanner(System.in);
 	}
 	
-
-	public void createPlayer(Player player) {
+	
+	// Methods
+	public void addPlayer(Player player) {
 		players.add(player);
 	}
 	
-	//What is the purpose of this method?
+	// ?
 	public void drawCards() {
 		//Object player = null;
 		//drawPile.deal(((Player) player).getHand(), 5);
@@ -74,13 +79,14 @@ public class Crazy8s { 				// action event listener variables and methods will n
 		
 		return null;
 	}
-
+	
+	// ?
 	public void waitForUser() {
 		in.nextLine();
 	}
-
-	// computer or human player takes next turn
-	// nani?
+	
+	// Computer or human player takes next turn
+	//nani?
 	public void takeTurn(Player player) {
 		Card convert = discardPile.returnLast();
 
@@ -93,14 +99,14 @@ public class Crazy8s { 				// action event listener variables and methods will n
 		//System.out.println(player.getName() + " plays " + next);
 	}
 	
-	//what is this supposed to do
+	// ?
 	private Crazy8s convert(Card convert) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	// user plays game
-	// this will need to be replaced with GUI
+	// User plays game
+	//this will need to be replaced with GUI
 	public void playGame() {
 		System.out.println("Crazy Eights!");
 		System.out.println("Enter number of players(2-4): ");
@@ -133,6 +139,7 @@ public class Crazy8s { 				// action event listener variables and methods will n
 		}
 	}
 	
+	// ?
 	private void displayState() {
 
 	}

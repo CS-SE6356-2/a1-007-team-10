@@ -1,12 +1,14 @@
 package assignment;
 
 public class Player {
+	// Fields
 	public String name = "";
 	public Hand hand;
 	private Deck drawPile;
 	private cardZone playPile;
 
 
+	// Constructors
 	// This constructor should not be called
 	public Player() {
 		System.out.println("Player constructor should be called with arguments.");
@@ -20,6 +22,7 @@ public class Player {
 	}
 
 
+	// Methods
 	// Returns true if the specified card exists and was moved successfully to the playPile, false if the card is not in this player's hand
 	public boolean playCard(Card c) {
 

@@ -1,21 +1,36 @@
 package assignment;
-
 import java.util.Random;
+
 
 public class Deck extends cardZone {
 	// Fields
+	// Why are these stored, shouldn't we just call cardList.remove(0) or cardList.remove(size-1) when we want one of those two?
 	private Card topCard;
 	//do we need this anymore?
 	private Card bottomCard;
 	
+	
 	// Constructor
+	//should eventually be deleted
 	Deck() {
+		super();
+		
 		fill();
 		
 		topCard = cardList.get(0);
 		// If the deck is empty for any reason, this can throw an IndexOutOfBounds error
 		bottomCard = cardList.get(cardList.size() - 1);
 	}
+	
+	Deck(String l) {
+		super(52, l, true);
+		fill();
+		
+		topCard = cardList.get(0);
+		// If the deck is empty for any reason, this can throw an IndexOutOfBounds error
+		bottomCard = cardList.get(cardList.size() - 1);
+	}
+	
 	
 	// Methods
 	// Helper method to create a new set of 52 cards to add to the card list
@@ -32,14 +47,23 @@ public class Deck extends cardZone {
 	
 	// Moves the top card of this deck into the specified hand
 	public boolean draw(Hand hand) {
-		//TODO
-		return false;
+		Card c = cardList.remove(0); //something
+		
+		return hand.addCard(c);
 	}
 	
+	// this shouldn't be necessary, see comment at top
 	// ?
 	public Card checkTop(Player player) {
 		//TODO
 		return topCard;
+	}
+	
+	// this shouldn't be necessary, see comment at top
+	// ?
+	public Card checkBottom(Player player) {
+		//TODO
+		return bottomCard;
 	}
 	
 	// Puts the cards in cardList in a random ordering using a Fisher Yates shuffle

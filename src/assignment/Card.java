@@ -1,20 +1,17 @@
 package assignment;
-
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+
 public class Card {
+	// Fields
 	private int suit;
 	private int number;
 	private Image image;
 	public boolean facing;
 	
 	
-	// This constructor should not be called
-	public Card() {
-		System.out.println("Card constructor should be called with arguments.");
-	}
-	
+	// Constructors
 	public Card(int s, int n, boolean f) {
 		suit = s;
 		number = n;
@@ -24,6 +21,7 @@ public class Card {
 	}
 	
 	
+	// Methods
 	// Changes the 'facing' value to the opposite of what it is currently
 	public void flip() {
 		facing = !facing;
@@ -36,7 +34,7 @@ public class Card {
 	
 	// what is the purpose of passing a player here?
 	public int getSuit(Player p) {
-
+		//TODO
 		return suit;
 	}
 	

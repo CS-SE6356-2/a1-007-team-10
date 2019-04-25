@@ -1,19 +1,27 @@
 package assignment;
-
 import java.util.ArrayList;
+
 
 public class cardZone {
 	// Fields
-	protected ArrayList<Card> cardList = new ArrayList<Card>();
+	protected ArrayList<Card> cardList;
+	protected String label;
 	public boolean visible; //make private and make getter/setter?
 	
+	
 	// Constructors
+	//should eventually be deleted
 	cardZone() {
-		visible = false;	
+		System.out.println("cardZone constructor should be called with arguments.");
+		cardList = new ArrayList<Card>();
+		label = "";
+		visible = false;
 	}
 	
-	cardZone(int s, boolean v) {
+	cardZone(int s, String l, boolean v) {
+		cardList = new ArrayList<Card>();
 		cardList.ensureCapacity(s);
+		label = l;
 		visible = v;
 	}
 	
@@ -21,8 +29,7 @@ public class cardZone {
 	// Methods
 	// Returns true if the specified card was successfully added to this zone
 	public boolean addCard(Card c) {
-		//TODO
-		return false;
+		return cardList.add(c);
 	}
 	
 	// Moves all cards from this zone to the specified zone
@@ -37,8 +44,17 @@ public class cardZone {
 		return false;
 	}
 	
-	// ?
-	public ArrayList<Card> checkCardZone() {
-		return cardList;
+	// Return the number of cards in the list
+	public int size() {
+		return cardList.size();
+	}
+	
+	// Returns true if the card list contains no cards
+	public boolean empty() {
+		return cardList.size() == 0;
+	}
+	
+	public String toString() {
+		return label + ": " + cardList.toString();
 	}
 }
