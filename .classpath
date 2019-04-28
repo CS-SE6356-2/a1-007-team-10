@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry excluding="assignment/Main.java" kind="src" path="src"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.swt"/>
-	<classpathentry kind="lib" path="/org.eclipse.swt/swt.jar" sourcepath="/org.eclipse.swt/src.zip"/>
+	<classpathentry kind="lib" path="lib/swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
