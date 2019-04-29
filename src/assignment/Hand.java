@@ -18,6 +18,6 @@ public class Hand extends cardZone {
 		super(s, l, v);
 	}
 
-	public void display() {
+	//public void display() {
 	//TODO: Send hand to GUI
 }

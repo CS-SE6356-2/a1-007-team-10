@@ -5,7 +5,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-public class GuiGameEnd extends Composite {
+public class GuiGameEnd extends GuiObject {
 
 	/**
 	 * Create the composite.

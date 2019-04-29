@@ -1,6 +1,7 @@
 package assignment;
 import java.util.ArrayList;
 import java.util.Scanner;
+import cardGui.*;
 
 public class Crazy8s {
 	// Fields
@@ -8,6 +9,7 @@ public class Crazy8s {
 	private Hand discardPile;
 	private Scanner in;
 	private ArrayList<Player> players;
+	private int pCount;
 
 
 	// Constructor
@@ -16,10 +18,10 @@ public class Crazy8s {
 		deck.shuffle();
 
 		discardPile = new Hand("Discard Pile", false);
-		deck.fill(discardPile);
+		//deck.fill(discardPile);
 
 		drawPile = new Hand("Draw new card", false);
-		deck.fill(drawPile);
+		//deck.fill(drawPile);
 
 		in = new Scanner(System.in);
 	}
@@ -69,10 +71,10 @@ public class Crazy8s {
 
 //TODO: Will make placed card decision if playing against CPU
 	public void takeTurn(Player player) {
-		Card convert = discardPile.returnLast();
+		//Card convert = discardPile.returnLast();
 
 		Crazy8s prev = new Crazy8s();
-		prev = prev.convert(convert);
+		//prev = prev.convert(convert);
 
 		//Crazy8s next = player.play(this, prev);
 		//discardPile.addCard(next);
@@ -102,7 +104,7 @@ public class Crazy8s {
 
 		// Main game loop
 		while(!isDone()) {
-			displayState();
+			//displayState();
 			waitForUser();
 			takeTurn(player);
 			player = nextPlayer(player);
@@ -111,13 +113,16 @@ public class Crazy8s {
 		//what is this supposed to do?
 		//this loop should return final score once one player has an empty hand
 		//Player class needs displayScore method to send data to GUI
-		for(Player players : players.getSize()) {
-			players.displayScore();
-		}
+		//for(Player players : players.getSize()) {
+			//players.displayScore();
+		//}
 	}
 
 	public static void main(String[] args) {
-		Crazy8s game = new Crazy8s();
-		game.playGame();
+		GuiMaster master = new GuiMaster();
+		//master.gameStart();
+		
+		
+		System.out.println(master.getPlayerCount());
 	}
 }

@@ -16,7 +16,7 @@ public class Player {
 
 	public Player (String n) {
 		this.name = n;
-		this.hand = new Hand(n);
+//		this.hand = new Hand(n);
 		//drawPile = dp;
 		//playPile = pp;
 	}
@@ -61,7 +61,7 @@ public class Player {
 	public Card play(Crazy8s game, Card prev) {
 			Card card = searchForMatch(prev);
 			if (card == null) {
-					card = drawTill(game, prev);
+//					card = drawTill(game, prev);
 			}
 			return card;
 	}
@@ -72,9 +72,9 @@ public class Player {
 	}
 
 	//adds max 3 cards to hand if hand does not contain match
-	public Card drawTill(crazy8s game, Card prev) {
+/*	public Card drawTill(crazy8s game, Card prev) {
 		return null;
-	}
+	}*/
 
 	//compares cards to see if they match
 	public static boolean cardMatch(Card card1, Card card2) {
@@ -92,7 +92,7 @@ public class Player {
 
 	// returns hand to display
 	public void display() {
-		hand.display();
+//		hand.display();
 	}
 
 	public String toString() {
