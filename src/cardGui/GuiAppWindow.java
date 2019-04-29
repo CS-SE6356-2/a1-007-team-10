@@ -15,7 +15,7 @@ public class GuiAppWindow {
 	 * Launch the application.
 	 * @param args
 	 */
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		try {
 			GuiAppWindow window = new GuiAppWindow();
 			//window.open();
@@ -23,7 +23,7 @@ public class GuiAppWindow {
 			e.printStackTrace();
 		}
 	}
-
+*/
 	/**
 	 * Open the window.
 	 */
