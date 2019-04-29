@@ -11,7 +11,7 @@ public class GuiObject extends Composite{
 		data = new GameData();
 	}
 	
-	public GameData getData() {
+	public GameData getGameData() {
 		return this.data;
 	}
 
