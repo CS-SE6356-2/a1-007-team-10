@@ -5,7 +5,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 
-public class GuiTurnStart extends Composite {
+public class GuiTurnStart extends GuiObject {
 
 	/**
 	 * Create the composite.
