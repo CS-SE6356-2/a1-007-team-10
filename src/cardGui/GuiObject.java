@@ -10,5 +10,9 @@ public class GuiObject extends Composite{
 		super(parent, style);
 		data = new GameData();
 	}
+	
+	public GameData getData() {
+		return this.data;
+	}
 
 }

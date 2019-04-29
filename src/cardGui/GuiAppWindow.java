@@ -63,7 +63,7 @@ public class GuiAppWindow {
 		default: System.out.println("Unknown state passed to application window");
 		}
 		
-		return content.data;
+		return content.getData();
 	}
 	
 	

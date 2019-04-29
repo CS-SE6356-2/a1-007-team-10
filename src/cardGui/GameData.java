@@ -6,6 +6,11 @@ public class GameData {
 	private ArrayList<String> players;
 	private int pCount;
 	
+	GameData(){
+		players = new ArrayList<String>();
+		pCount = 0;
+	}
+	
 	public void addName(String name) {
 		players.add(name);
 	}

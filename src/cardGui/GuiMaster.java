@@ -1,5 +1,7 @@
 package cardGui;
 
+import java.util.ArrayList;
+
 //import org.eclipse.swt.widgets.Composite;
 
 public class GuiMaster {
@@ -22,5 +24,9 @@ public class GuiMaster {
 		return data.getCount();
 	}
 	
+	public ArrayList<String> getNameList()
+	{
+		return data.getNames();
+	}
 	
 }

@@ -123,6 +123,6 @@ public class Crazy8s {
 		//master.gameStart();
 		
 		
-		System.out.println(master.getPlayerCount());
+		System.out.println(master.getPlayerCount()/* + ' ' + master.getNameList().get(0)*/);
 	}
 }

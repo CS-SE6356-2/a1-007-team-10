@@ -69,12 +69,17 @@ public class GuiGameStart extends GuiObject {
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				data.setCount(list.getSelectionIndex() + 2);
-				//playerCount = list.getSelectionIndex() + 2;
+				playerCount = list.getSelectionIndex() + 2;
+				data.setCount(playerCount);
+				data.addName(getP1Name());
+				data.addName(getP2Name());
+				data.addName(getP3Name());
+				data.addName(getP4Name());
+				//playerCount = playerCount;
 //				wait = false;
+//				System.out.println(playerCount);
 				parent.dispose();
 				
-				//System.out.println(list.getSelectionIndex() + 2);
 			}
 		});
 		btnNewButton.setFont(SWTResourceManager.getFont("Segoe UI", 22, SWT.NORMAL));
