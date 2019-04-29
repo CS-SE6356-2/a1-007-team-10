@@ -18,7 +18,7 @@ public class GuiAppWindow {
 	public static void main(String[] args) {
 		try {
 			GuiAppWindow window = new GuiAppWindow();
-			window.open();
+			//window.open();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
