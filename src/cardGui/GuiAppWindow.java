@@ -54,11 +54,11 @@ public class GuiAppWindow {
 		switch(state) {
 		case 0: content = new GuiGameStart(shell, SWT.NONE);
 			break;
-		case 1: content = new GuiGameStart(shell, SWT.NONE);
+		case 1: content = new GuiTurnStart(shell, SWT.NONE);
 			break;
-		case 2: content = new GuiGameStart(shell, SWT.NONE);
+		case 2: content = new GuiPlayArea(shell, SWT.NONE);
 			break;
-		case 3: content = new GuiGameStart(shell, SWT.NONE);
+		case 3: content = new GuiGameEnd(shell, SWT.NONE);
 			break;
 		default: System.out.println("Unknown state passed to application window");
 		}
