@@ -1,4 +1,4 @@
-package assignment;
+package base;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.wb.swt.SWTResourceManager;
 

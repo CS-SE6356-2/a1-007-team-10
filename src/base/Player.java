@@ -1,4 +1,4 @@
-package assignment;
+package base;
 
 public class Player {
 	// Fields
