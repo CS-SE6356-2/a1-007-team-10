@@ -27,10 +27,9 @@ public class GuiAppWindow {
 	/**
 	 * Open the window.
 	 */
-	public GameData open() {
-		GameData holder;
+	public void open(GameData d) {
 		Display display = Display.getDefault();
-		holder = createContents();
+		createContents(d);
 		shell.open();
 		shell.layout();
 		while (!shell.isDisposed()) {
@@ -38,13 +37,12 @@ public class GuiAppWindow {
 				display.sleep();
 			}
 		}
-		return holder;
 	}
 
 	/**
 	 * Create contents of the window.
 	 */
-	protected GameData createContents() {
+	protected void createContents(GameData d) {
 		shell = new Shell();
 		shell.setSize(960, 540);
 		shell.setText("Crazy 8s");
@@ -52,7 +50,7 @@ public class GuiAppWindow {
 		
 		GuiObject content = null;
 		switch(state) {
-		case 0: content = new GuiGameStart(shell, SWT.NONE);
+		case 0: content = new GuiGameStart(shell, SWT.NONE, d);
 			break;
 		case 1: content = new GuiTurnStart(shell, SWT.NONE);
 			break;
@@ -63,7 +61,6 @@ public class GuiAppWindow {
 		default: System.out.println("Unknown state passed to application window");
 		}
 		
-		return content.getGameData();
 	}
 	
 	

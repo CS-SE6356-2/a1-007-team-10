@@ -124,5 +124,7 @@ public class Crazy8s {
 		
 		
 		System.out.println(master.getPlayerCount()/* + ' ' + master.getNameList().get(0)*/);
+		master.gameStart();
+		System.out.println(master.getPlayerCount()/* + ' ' + master.getNameList().get(0)*/);
 	}
 }
