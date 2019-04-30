@@ -58,21 +58,6 @@ public class Crazy8s {
 		return null;
 	}
 	
-	/* why is this here, we arent doing cpu's
-	//TODO: Will make placed card decision if playing against CPU
-	public void takeTurn(Player player) {
-		Card convert = discardPile.returnLast();
-
-		Crazy8s prev = new Crazy8s();
-		prev = prev.convert(convert);
-
-		Crazy8s next = player.play(this, prev);
-		discardPile.addCard(next);
-
-		System.out.println(player.getName() + " plays " + next);
-	}
-	*/
-	
 	// Plays the game
 	public void playGame() {
 		GuiMaster master = new GuiMaster();
