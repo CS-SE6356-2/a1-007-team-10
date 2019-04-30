@@ -18,9 +18,8 @@ public class cardZone {
 		visible = false;
 	}
 	
-	cardZone(int s, String l, boolean v) {
+	cardZone(String l, boolean v) {
 		cardList = new ArrayList<Card>();
-		cardList.ensureCapacity(s);
 		label = l;
 		visible = v;
 	}

@@ -9,15 +9,12 @@ public class Hand extends cardZone {
 	public Hand() {
 		super();
 	}
-
+	
 	public Hand(String l, boolean v) {
-		super(1, l, v);
+		super(l, v);
 	}
-
-	public Hand(int s, String l, boolean v) {
-		super(s, l, v);
-	}
-
-	//public void display() {
-	//TODO: Send hand to GUI
+	
+	
+	// Methods
+	//is there anything we need here?
 }
