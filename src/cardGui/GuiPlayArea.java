@@ -286,7 +286,7 @@ public class GuiPlayArea extends GuiObject {
 	}
 	
 	private static Image getCardImage(GameData d, int index) { //gets the image for a card from the GameData object based on Hand index, checks for oob and if true, returns a blank image instead
-		if(index > d.getHand().size()) {
+		if(index >= d.getHand().size()) {
 			return SWTResourceManager.getImage(GuiPlayArea.class, "/images/blank.png");
 		}
 		else
