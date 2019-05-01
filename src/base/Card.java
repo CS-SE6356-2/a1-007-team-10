@@ -20,10 +20,15 @@ public class Card {
 		//temporarily just the back of a card
 		image = SWTResourceManager.getImage(Card.class, "/images/" + n + '_'+ s + ".png");
 		/*
-		 * Aces = 0
-		 * jack = 11
-		 * king = 13
-		 * queen = 12
+		 * Aces 	= 	0
+		 * jack 	= 	11
+		 * king 	= 	13
+		 * queen	= 	12
+		 * 
+		 * clubs 	= 	0
+		 * diamonds =	1
+		 * hearts 	=	2
+		 * spades 	=	3
 		 */
 	}
 	
