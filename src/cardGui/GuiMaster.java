@@ -45,6 +45,7 @@ public class GuiMaster {
 		data.setTurnHand(playerHand);
 		win.open(data);
 		
+		return -1; //TODO
 	}
 	
 	public int getPlayerCount() {
