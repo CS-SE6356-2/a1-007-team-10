@@ -75,7 +75,7 @@ public class GuiGameStart extends GuiObject {
 				data.addName(getP2Name());
 				data.addName(getP3Name());
 				data.addName(getP4Name());
-				//playerCount = playerCount;
+
 //				wait = false;
 //				System.out.println(playerCount);
 				parent.dispose();
