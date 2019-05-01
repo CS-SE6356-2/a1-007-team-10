@@ -4,7 +4,7 @@ import org.eclipse.swt.widgets.Composite;
 
 public class GuiObject extends Composite{
 
-	GameData data;
+	protected GameData data;
 	
 	public GuiObject(Composite parent, int style) {
 		super(parent, style);

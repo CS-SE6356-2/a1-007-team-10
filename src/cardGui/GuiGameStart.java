@@ -16,7 +16,7 @@ public class GuiGameStart extends GuiObject {
 	private Text p3Name;
 	private Text p4Name;
 	private int playerCount;
-	public GameData data = new GameData();
+	//public GameData data;
 	//private boolean wait = true;
 
 	/**
@@ -24,7 +24,7 @@ public class GuiGameStart extends GuiObject {
 	 * @param parent
 	 * @param style
 	 */
-	public GuiGameStart(Composite parent, int style) {
+	public GuiGameStart(Composite parent, int style, GameData data) {
 		super(parent, style);
 		setLayout(null);
 		
@@ -69,13 +69,17 @@ public class GuiGameStart extends GuiObject {
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				System.out.println("BUTTON PRESSED");
 				playerCount = list.getSelectionIndex() + 2;
 				data.setCount(playerCount);
 				data.addName(getP1Name());
 				data.addName(getP2Name());
 				data.addName(getP3Name());
-				data.addName(getP4Name());
-
+				data.addName(getP4Name());	
+				System.out.println("Player Count: " + playerCount);
+				System.out.println("Player 1 Name: " + getP1Name());
+				
+				//playerCount = playerCount;
 //				wait = false;
 //				System.out.println(playerCount);
 				parent.dispose();

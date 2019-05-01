@@ -11,13 +11,19 @@ public class GuiMaster {
 	{
 		GuiAppWindow win = new GuiAppWindow();
 		win.setState(0);
-		data = win.open();
+		data = new GameData();
+		win.open(data);
+		
+		System.out.println("In GuiMaster");
+		System.out.println("Player Count: " + data.getCount());
+		System.out.println("Player 1 name: " + data.getNames().get(0));
 	}
 	
 	public void gameStart() {
 		GuiAppWindow win = new GuiAppWindow();
 		win.setState(0);
-		data = win.open();
+		data = new GameData();
+		win.open(data);
 	}
 	
 	public int getPlayerCount() {
