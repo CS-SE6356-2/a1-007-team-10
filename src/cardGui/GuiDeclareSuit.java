@@ -41,7 +41,7 @@ public class GuiDeclareSuit extends GuiObject {
 		label.setImage(SWTResourceManager.getImage(GuiDeclareSuit.class, "/images/8_1.png"));
 		label.setBounds(372, 179, 75, 90);
 		
-		Button choose1 = new Button(this, SWT.NONE);
+		Button choose1 = new Button(this, SWT.NONE); //diamonds
 		choose1.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
@@ -56,7 +56,7 @@ public class GuiDeclareSuit extends GuiObject {
 		label_1.setImage(SWTResourceManager.getImage(GuiDeclareSuit.class, "/images/8_2.png"));
 		label_1.setBounds(453, 179, 75, 90);
 		
-		Button choose2 = new Button(this, SWT.NONE);
+		Button choose2 = new Button(this, SWT.NONE); //hearts
 		choose2.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
@@ -71,7 +71,7 @@ public class GuiDeclareSuit extends GuiObject {
 		label_2.setImage(SWTResourceManager.getImage(GuiDeclareSuit.class, "/images/8_3.png"));
 		label_2.setBounds(534, 179, 75, 90);
 		
-		Button choose3 = new Button(this, SWT.NONE);
+		Button choose3 = new Button(this, SWT.NONE); //spades
 		choose3.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
