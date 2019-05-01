@@ -14,14 +14,14 @@ public class GuiTurnStart extends GuiObject {
 	 * @param parent
 	 * @param style
 	 */
-	public GuiTurnStart(Composite parent, int style, GameData d) {
+	public GuiTurnStart(Composite parent, int style, GameData data) {
 		super(parent, style);
 		setLayout(null);
 		
 		Label lblPlayerTurn = new Label(this, SWT.WRAP);
 		lblPlayerTurn.setAlignment(SWT.CENTER);
 		lblPlayerTurn.setBounds(371, 172, 174, 37);
-		lblPlayerTurn.setText(d.getTurnName() + "'s Turn");
+		lblPlayerTurn.setText(data.getTurnName() + "'s Turn");
 		
 		Button btnNewButton = new Button(this, SWT.NONE);
 		btnNewButton.addSelectionListener(new SelectionAdapter() {

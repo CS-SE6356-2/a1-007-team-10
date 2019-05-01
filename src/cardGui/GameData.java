@@ -12,12 +12,19 @@ public class GameData {
 	private String turnName;
 	private Hand turnHand;
 	private Card topCard;
+	private int turnChoice;
+	private int deckSize;
+	private int discardSize;
 	
 	GameData(){
 		players = new ArrayList<String>();
 		pCount = 0;
 		turnName = "Default Name";
-		turnHand = new Hand();
+		turnHand = null;
+		topCard = null;
+		turnChoice = 0;
+		deckSize = 0;
+		discardSize = 0;
 	}
 	
 	//Setters
@@ -37,6 +44,22 @@ public class GameData {
 		turnHand = h;
 	}
 	
+	public void setTopCard(Card c) {
+		topCard = c;
+	}
+	
+	public void setChoice(int i) {
+		turnChoice = i;
+	}
+	
+	public void setDeckSize(int s) {
+		deckSize = s;
+	}
+	
+	public void setDiscardSize(int s) {
+		discardSize = s;
+	}
+	
 	//Getters
 	public int getCount() {
 		return pCount;
@@ -53,5 +76,21 @@ public class GameData {
 	
 	public Hand getHand() {
 		return turnHand;
+	}
+	
+	public Card getTopCard() {
+		return topCard;
+	}
+	
+	public int getChoice() {
+		return turnChoice;
+	}
+	
+	public int getDeckSize() {
+		return deckSize;
+	}
+	
+	public int getDiscardSize() {
+		return discardSize;
 	}
 }

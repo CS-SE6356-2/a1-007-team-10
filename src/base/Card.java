@@ -17,7 +17,8 @@ public class Card {
 		number = n;
 		facing = f;
 		// The first parameter of this may need to change as I'm not sure exactly what it does
-		image = SWTResourceManager.getImage(Card.class, "/testImages/tempCard.png");
+		//temporarily just the back of a card
+		image = SWTResourceManager.getImage(Card.class, "/images/cardback.png");
 	}
 	
 	

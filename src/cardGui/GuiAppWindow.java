@@ -54,7 +54,7 @@ public class GuiAppWindow {
 			break;
 		case 1: content = new GuiTurnStart(shell, SWT.NONE, d);
 			break;
-		case 2: content = new GuiPlayArea(shell, SWT.NONE);
+		case 2: content = new GuiPlayArea(shell, SWT.NONE, d);
 			break;
 		case 3: content = new GuiGameEnd(shell, SWT.NONE);
 			break;

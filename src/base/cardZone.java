@@ -56,4 +56,8 @@ public class cardZone {
 	public String toString() {
 		return label + ": " + cardList.toString();
 	}
+	
+	public Card get(int i) {
+		return cardList.get(i);
+	}
 }

@@ -38,14 +38,17 @@ public class GuiMaster {
 		
 	}
 	
-	public int turn(String name, Hand playerHand, Card topCard) { //returns index in hand that they play, -1 if they draw a card
+	public int turn(String name, Hand playerHand, Card topCard, int deckSize, int discardSize) { //returns index in hand that they play, -1 if they draw a card
 		GuiAppWindow win = new GuiAppWindow();
 		win.setState(2);
 		data.setTurnName(name);
 		data.setTurnHand(playerHand);
+		data.setTopCard(topCard);
+		data.setDeckSize(deckSize);
+		data.setDiscardSize(discardSize);
 		win.open(data);
 		
-		return -1; //TODO
+		return data.getChoice();
 	}
 	
 	public int getPlayerCount() {
