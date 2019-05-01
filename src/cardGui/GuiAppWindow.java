@@ -65,6 +65,8 @@ public class GuiAppWindow {
 			break;
 		case 4: content = new GuiMessage(shell, SWT.NONE, d);
 			break;
+		case 5: content = new GuiDeclareSuit(shell, SWT.NONE, d);
+			break;
 		default: System.out.println("Unknown state passed to application window");
 		}
 		

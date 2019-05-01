@@ -51,6 +51,14 @@ public class GuiMaster {
 		return data.getChoice();
 	}
 	
+	public int wildcard() { //returns the integer corresponding with the selected suit for their 8. This should be called when the player plays an 8
+		GuiAppWindow win = new GuiAppWindow();
+		win.setState(5);
+		win.open(data);
+		
+		return data.getChoice();
+	}
+	
 	public boolean gameEnd(String name) {
 		GuiAppWindow win = new GuiAppWindow();
 		win.setState(3);
