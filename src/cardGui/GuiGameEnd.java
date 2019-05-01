@@ -4,6 +4,9 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class GuiGameEnd extends GuiObject {
 
@@ -23,7 +26,29 @@ public class GuiGameEnd extends GuiObject {
 		lblNewLabel.setAlignment(SWT.CENTER);
 		lblNewLabel.setFont(SWTResourceManager.getFont("Segoe UI", 15, SWT.NORMAL));
 		lblNewLabel.setBounds(375, 225, 201, 77);
-		lblNewLabel.setText("Player 1 Wins!");
+		lblNewLabel.setText(data.getTurnName() + " Wins!");
+		
+		Button btnExit = new Button(this, SWT.NONE);
+		btnExit.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				data.setContinue(false);
+				parent.dispose();
+			}
+		});
+		btnExit.setBounds(439, 422, 75, 25);
+		btnExit.setText("Exit");
+		
+		Button btnNewGame = new Button(this, SWT.NONE);
+		btnNewGame.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				data.setContinue(true);
+				parent.dispose();
+			}
+		});
+		btnNewGame.setBounds(439, 372, 75, 25);
+		btnNewGame.setText("New Game");
 
 	}
 

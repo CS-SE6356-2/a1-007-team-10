@@ -16,6 +16,7 @@ public class GameData {
 	private int deckSize;
 	private int discardSize;
 	private String message;
+	private boolean cont;
 	
 	GameData(){
 		players = new ArrayList<String>();
@@ -27,6 +28,7 @@ public class GameData {
 		deckSize = 0;
 		discardSize = 0;
 		message = "";
+		cont = false;
 	}
 	
 	//Setters
@@ -65,6 +67,11 @@ public class GameData {
 	public void setMessage(String m) {
 		message = m;
 	}
+	
+	public void setContinue(boolean c) {
+		cont = c;
+	}
+	
 	//Getters
 	public int getCount() {
 		return pCount;
@@ -100,5 +107,8 @@ public class GameData {
 	}
 	public String getMessage() {
 		return message;
+	}
+	public boolean getContinue() {
+		return cont;
 	}
 }

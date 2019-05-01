@@ -51,8 +51,13 @@ public class GuiMaster {
 		return data.getChoice();
 	}
 	
-	public void gameEnd() {
+	public boolean gameEnd(String name) {
+		GuiAppWindow win = new GuiAppWindow();
+		win.setState(3);
+		data.setTurnName(name);
+		win.open(data);
 		
+		return data.getContinue();
 	}
 	
 	public void message(String message) { //displays a basic dialogue box
