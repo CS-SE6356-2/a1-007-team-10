@@ -2,7 +2,7 @@ package cardGui;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.widgets.Composite;
+//import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -52,7 +52,7 @@ public class GuiAppWindow {
 		switch(state) {
 		case 0: content = new GuiGameStart(shell, SWT.NONE, d);
 			break;
-		case 1: content = new GuiTurnStart(shell, SWT.NONE);
+		case 1: content = new GuiTurnStart(shell, SWT.NONE, d);
 			break;
 		case 2: content = new GuiPlayArea(shell, SWT.NONE);
 			break;

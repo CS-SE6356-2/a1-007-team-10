@@ -4,6 +4,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 
 public class GuiTurnStart extends GuiObject {
 
@@ -12,21 +14,28 @@ public class GuiTurnStart extends GuiObject {
 	 * @param parent
 	 * @param style
 	 */
-	public GuiTurnStart(Composite parent, int style) {
+	public GuiTurnStart(Composite parent, int style, GameData d) {
 		super(parent, style);
 		setLayout(null);
 		
 		Label lblPlayerTurn = new Label(this, SWT.WRAP);
-		lblPlayerTurn.setBounds(374, 172, 171, 36);
-		lblPlayerTurn.setText("Player 1's Turn");
+		lblPlayerTurn.setAlignment(SWT.CENTER);
+		lblPlayerTurn.setBounds(371, 172, 174, 37);
+		lblPlayerTurn.setText(d.getTurnName() + "'s Turn");
 		
 		Button btnNewButton = new Button(this, SWT.NONE);
-		btnNewButton.setBounds(414, 293, 75, 25);
+		btnNewButton.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent arg0) {
+				parent.dispose();
+			}
+		});
+		btnNewButton.setBounds(371, 215, 187, 88);
 		btnNewButton.setText("Begin");
 		
 		Label label = new Label(this, SWT.NONE);
 		label.setText("Crazy 8s");
-		label.setBounds(10, 10, 55, 15);
+		label.setBounds(10, 10, 64, 25);
 
 	}
 

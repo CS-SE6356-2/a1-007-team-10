@@ -6,13 +6,13 @@ public class cardZone {
 	// Fields
 	protected ArrayList<Card> cardList;
 	protected String label;
-	public boolean visible; //make private and make getter/setter?
+	public boolean visible; //make private and make getter/setter? it should be
 	
 	
 	// Constructors
 	//should eventually be deleted
 	cardZone() {
-		System.out.println("cardZone constructor should be called with arguments.");
+		//System.out.println("cardZone constructor should be called with arguments.");
 		cardList = new ArrayList<Card>();
 		label = "";
 		visible = false;
