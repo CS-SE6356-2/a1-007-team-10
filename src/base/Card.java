@@ -18,7 +18,13 @@ public class Card {
 		facing = f;
 		// The first parameter of this may need to change as I'm not sure exactly what it does
 		//temporarily just the back of a card
-		image = SWTResourceManager.getImage(Card.class, "/images/cardback.png");
+		image = SWTResourceManager.getImage(Card.class, "/images/" + n + '_'+ s + ".png");
+		/*
+		 * Aces = 0
+		 * jack = 11
+		 * king = 13
+		 * queen = 12
+		 */
 	}
 	
 	

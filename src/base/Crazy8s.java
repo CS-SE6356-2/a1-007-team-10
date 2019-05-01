@@ -78,8 +78,8 @@ public class Crazy8s {
 	public static void main(String[] args) {
 		GuiMaster master = new GuiMaster();
 		//System.out.println(master.getPlayerCount()/* + ' ' + master.getNameList().get(0)*/);
-		master.turnStart("nametest");
+		//master.turnStart("nametest");
 		
-		master.message("This is my test message This is my test message This is my test message This is my test message ");
+		//master.message("This is my test message This is my test message This is my test message This is my test message ");
 	}
 }
