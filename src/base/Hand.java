@@ -16,7 +16,7 @@ public class Hand extends cardZone {
 	
 	
 	// Methods
-	//is there anything we need here? YES
+	//is there anything we need here?
 	
 	
 }
