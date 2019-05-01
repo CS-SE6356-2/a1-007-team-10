@@ -11,7 +11,7 @@ public class GameData {
 	private int pCount;
 	private String turnName;
 	private Hand turnHand;
-	private Card
+	private Card topCard;
 	
 	GameData(){
 		players = new ArrayList<String>();
