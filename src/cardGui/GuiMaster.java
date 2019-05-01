@@ -51,6 +51,18 @@ public class GuiMaster {
 		return data.getChoice();
 	}
 	
+	public void gameEnd() {
+		
+	}
+	
+	public void message(String message) { //displays a basic dialogue box
+		GuiAppWindow win = new GuiAppWindow();
+		win.setState(4);
+		data.setMessage(message);
+		win.open(data);
+		
+	}
+	
 	public int getPlayerCount() {
 		return data.getCount();
 	}
@@ -59,5 +71,6 @@ public class GuiMaster {
 	{
 		return data.getNames();
 	}
+	
 	
 }

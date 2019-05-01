@@ -2,7 +2,7 @@ package cardGui;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.FillLayout;
-//import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -48,6 +48,11 @@ public class GuiAppWindow {
 		shell.setText("Crazy 8s");
 		shell.setLayout(new FillLayout(SWT.HORIZONTAL));
 		
+		/*//This is how to not open a new window every time but I'm not going to mess with this until everything else works
+		Composite holder = new Composite(shell, SWT.NONE);
+		holder.setSize(960, 540);
+		holder.setLayout(new FillLayout(SWT.HORIZONTAL));
+		*/
 		GuiObject content = null;
 		switch(state) {
 		case 0: content = new GuiGameStart(shell, SWT.NONE, d);
@@ -56,14 +61,15 @@ public class GuiAppWindow {
 			break;
 		case 2: content = new GuiPlayArea(shell, SWT.NONE, d);
 			break;
-		case 3: content = new GuiGameEnd(shell, SWT.NONE);
+		case 3: content = new GuiGameEnd(shell, SWT.NONE, d);
+			break;
+		case 4: content = new GuiMessage(shell, SWT.NONE, d);
 			break;
 		default: System.out.println("Unknown state passed to application window");
 		}
 		
 	}
-	
-	
+
 	public void setState(int s) {
 		state = s;
 		

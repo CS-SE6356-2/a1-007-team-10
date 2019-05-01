@@ -6,24 +6,25 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.wb.swt.SWTResourceManager;
 
-public class GuiTurnStart extends GuiObject {
+public class GuiMessage extends GuiObject {
 
 	/**
 	 * Create the composite.
 	 * @param parent
 	 * @param style
 	 */
-	public GuiTurnStart(Composite parent, int style, GameData data) {
+	public GuiMessage(Composite parent, int style, GameData d) {
 		super(parent, style);
 		setLayout(null);
 		
-		Label lblPlayerTurn = new Label(this, SWT.WRAP);
-		lblPlayerTurn.setFont(SWTResourceManager.getFont("Segoe UI", 20, SWT.NORMAL));
-		lblPlayerTurn.setAlignment(SWT.CENTER);
-		lblPlayerTurn.setBounds(266, 131, 397, 78);
-		lblPlayerTurn.setText(data.getTurnName() + "'s Turn");
+		Label lblMessage = new Label(this, SWT.NONE);
+		lblMessage.setBounds(10, 10, 55, 15);
+		lblMessage.setText("Message");
+		
+		Label lblNewLabel = new Label(this, SWT.BORDER | SWT.WRAP);
+		lblNewLabel.setBounds(10, 31, 864, 399);
+		lblNewLabel.setText(d.getMessage());
 		
 		Button btnNewButton = new Button(this, SWT.NONE);
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
@@ -32,12 +33,8 @@ public class GuiTurnStart extends GuiObject {
 				parent.dispose();
 			}
 		});
-		btnNewButton.setBounds(371, 215, 187, 88);
-		btnNewButton.setText("Begin");
-		
-		Label label = new Label(this, SWT.NONE);
-		label.setText("Crazy 8s");
-		label.setBounds(10, 10, 64, 25);
+		btnNewButton.setBounds(799, 436, 75, 25);
+		btnNewButton.setText("Okay");
 
 	}
 

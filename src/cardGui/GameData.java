@@ -15,6 +15,7 @@ public class GameData {
 	private int turnChoice;
 	private int deckSize;
 	private int discardSize;
+	private String message;
 	
 	GameData(){
 		players = new ArrayList<String>();
@@ -25,6 +26,7 @@ public class GameData {
 		turnChoice = 0;
 		deckSize = 0;
 		discardSize = 0;
+		message = "";
 	}
 	
 	//Setters
@@ -60,6 +62,9 @@ public class GameData {
 		discardSize = s;
 	}
 	
+	public void setMessage(String m) {
+		message = m;
+	}
 	//Getters
 	public int getCount() {
 		return pCount;
@@ -92,5 +97,8 @@ public class GameData {
 	
 	public int getDiscardSize() {
 		return discardSize;
+	}
+	public String getMessage() {
+		return message;
 	}
 }

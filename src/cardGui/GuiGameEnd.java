@@ -12,7 +12,7 @@ public class GuiGameEnd extends GuiObject {
 	 * @param parent
 	 * @param style
 	 */
-	public GuiGameEnd(Composite parent, int style) {
+	public GuiGameEnd(Composite parent, int style, GameData data) {
 		super(parent, style);
 		
 		Label label = new Label(this, SWT.NONE);
@@ -20,6 +20,7 @@ public class GuiGameEnd extends GuiObject {
 		label.setBounds(10, 10, 55, 15);
 		
 		Label lblNewLabel = new Label(this, SWT.WRAP);
+		lblNewLabel.setAlignment(SWT.CENTER);
 		lblNewLabel.setFont(SWTResourceManager.getFont("Segoe UI", 15, SWT.NORMAL));
 		lblNewLabel.setBounds(375, 225, 201, 77);
 		lblNewLabel.setText("Player 1 Wins!");
