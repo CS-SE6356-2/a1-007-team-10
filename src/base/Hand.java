@@ -16,7 +16,9 @@ public class Hand extends cardZone {
 	
 	
 	// Methods
-	//is there anything we need here? YES
+
+	// return card, given an index
+	// card removal as played
 	
 	
 }

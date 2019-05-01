@@ -4,9 +4,7 @@ import java.util.Random;
 
 public class Deck extends cardZone {
 	// Fields
-	// Why are these stored, shouldn't we just call cardList.remove(0) or cardList.remove(size-1) when we want one of those two?
 	private Card topCard;
-	//do we need this anymore?
 	private Card bottomCard;
 	
 	
@@ -16,7 +14,7 @@ public class Deck extends cardZone {
 		super();
 		
 		fill();
-		
+		shuffle();
 		topCard = cardList.get(0);
 		// If the deck is empty for any reason, this can throw an IndexOutOfBounds error
 		bottomCard = cardList.get(cardList.size() - 1);
@@ -25,7 +23,7 @@ public class Deck extends cardZone {
 	Deck(String l) {
 		super(l, true);
 		fill();
-		
+		shuffle();
 		topCard = cardList.get(0);
 		// If the deck is empty for any reason, this can throw an IndexOutOfBounds error
 		bottomCard = cardList.get(cardList.size() - 1);
@@ -47,22 +45,18 @@ public class Deck extends cardZone {
 	
 	// Moves the top card of this deck into the specified hand
 	public boolean draw(Hand hand) {
-		Card c = cardList.remove(0); //something
+		Card c = cardList.remove(0); 
 		
 		return hand.addCard(c);
 	}
 	
-	// this shouldn't be necessary, see comment at top
-	// ?
+
 	public Card checkTop(Player player) {
-		//TODO
 		return topCard;
 	}
 	
-	// this shouldn't be necessary, see comment at top
-	// ?
+
 	public Card checkBottom(Player player) {
-		//TODO
 		return bottomCard;
 	}
 	

@@ -6,7 +6,7 @@ public class cardZone {
 	// Fields
 	protected ArrayList<Card> cardList;
 	protected String label;
-	public boolean visible; //make private and make getter/setter? it should be
+	private boolean visible;
 	
 	
 	// Constructors
@@ -24,6 +24,14 @@ public class cardZone {
 		visible = v;
 	}
 	
+	// setter and getter for visibility
+	public void setVisible(boolean v) {
+		visible = v;
+	}
+	
+	public boolean getVisible() {
+		return visible;
+	}
 	
 	// Methods
 	// Returns true if the specified card was successfully added to this zone

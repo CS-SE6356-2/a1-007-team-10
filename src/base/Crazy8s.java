@@ -63,8 +63,23 @@ public class Crazy8s {
 		GuiMaster master = new GuiMaster();
 		master.gameStart();
 		
-		System.out.println(master.getPlayerCount()/* + ' ' + master.getNameList().get(0)*/);
-		
+
+		// Filling player decks
+		// if two players, each starts with 7 cards
+		if(master.getPlayerCount() == 2) {
+			for(int i = 0; i < 2; i++) {
+				for(int j = 0; j < 7; j++) {
+					drawPile.draw(players.get(i).hand);
+				}
+			}
+		} // otherwise each starts with 5 cards
+		else {
+			for(int i = 0; i < master.getPlayerCount(); i++) {
+				for(int j = 0; j < 5; j++) {
+					drawPile.draw(players.get(i).hand);
+				}
+			}
+		}
 		// Main game loop
 		while(!isDone()) {
 			//master.nextState();

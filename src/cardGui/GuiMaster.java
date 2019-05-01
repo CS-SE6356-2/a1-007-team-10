@@ -16,9 +16,9 @@ public class GuiMaster {
 		data = new GameData();
 		win.open(data);
 		
-		System.out.println("In GuiMaster");
-		System.out.println("Player Count: " + data.getCount());
-		System.out.println("Player 1 name: " + data.getNames().get(0));
+//		System.out.println("In GuiMaster");
+//		System.out.println("Player Count: " + data.getCount());
+//		System.out.println("Player 1 name: " + data.getNames().get(0));
 	}
 	
 	
