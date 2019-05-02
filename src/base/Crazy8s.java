@@ -119,7 +119,7 @@ public class Crazy8s {
 
 			// Get player card selection
 			while(choice != -1) {
-				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(game.playPile.size()-1), game.drawPile.size(), game.playPile.size());
 
 				// If they draw, keep doing the loop
 				if(choice == -1) {
