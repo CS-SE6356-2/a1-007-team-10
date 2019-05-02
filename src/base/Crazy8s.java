@@ -51,7 +51,7 @@ public class Crazy8s {
 		}
 
 		// If the player is the last one
-		if(getPlayerIndex(current) == players.size()) {
+		if(getPlayerIndex(current) == players.size() - 1 ) {
 			return players.get(0);
 		}
 
@@ -85,6 +85,7 @@ public class Crazy8s {
 		ArrayList<String> names = master.getNameList();
 		for(int i = 0; i < playerCnt; i++) {
 			game.addPlayer(names.get(i));
+			System.out.println(names.get(i));
 		}
 
 		// Filling player hands
@@ -116,6 +117,8 @@ public class Crazy8s {
 
 			// Index of card they play
 			int choice = 0;
+			
+			master.turnStart(cPlayer.name);
 
 			// Get player card selection
 			while(choice != -1) {
@@ -127,6 +130,12 @@ public class Crazy8s {
 					continue;
 				}
 
+				if(choice >= cPlayer.hand.size())
+				{
+					master.message("Please select a card in your hand!");
+					continue;
+				}
+				
 				// Card selected
 				Card move = cPlayer.hand.get(choice);
 
@@ -150,7 +159,7 @@ public class Crazy8s {
 				// Valid card has been played, take next turn
 				break;
 			}
-			cPlayer = game.players.get(0);
+			//cPlayer = game.players.get(0);
 		} while(!game.isDone());
 		
 		/* old logic
