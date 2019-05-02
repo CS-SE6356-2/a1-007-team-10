@@ -53,7 +53,7 @@ public class cardZone {
             if(cardList.get(i) == c) {
                 Card tmp = cardList.remove(i);
 
-                return cz.addCard(tmp);;
+                return cz.addCard(tmp);
             }
 		}
 		return false;
@@ -77,7 +77,7 @@ public class cardZone {
 		}
 	}
 
-	Returns the card object at the specified index
+	//Returns the card object at the specified index
 	public Card get(int i) {
 		return cardList.get(i);
 	}

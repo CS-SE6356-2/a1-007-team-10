@@ -67,7 +67,7 @@ public class Crazy8s {
 	}
 
 	public boolean played8(Card played) {
-		if(played.getNumber() == 8){
+		if(played.getNumber() == 7){
 			return true;
 		}
 		return false;
@@ -120,7 +120,7 @@ public class Crazy8s {
 
 			// Get player card selection
 			while(true /* I dont like this */) {
-                choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+                choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(game.playPile.size() - 1), game.drawPile.size(), game.playPile.size());
 
                 // If they draw, keep doing the loop
                 if(choice == -1) {
