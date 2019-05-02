@@ -59,7 +59,7 @@ public class Crazy8s {
 	}
 
 	public boolean isValid(Card played) {
-		Card topCard = playPile.get(0);
+		Card topCard = playPile.get(playPile.size()-1);
 		if(played.suitMatch(topCard) || played.numMatch(topCard)) {
 			return true;
 		}
