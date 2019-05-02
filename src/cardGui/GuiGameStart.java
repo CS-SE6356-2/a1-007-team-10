@@ -69,7 +69,7 @@ public class GuiGameStart extends GuiObject {
 		btnNewButton.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				System.out.println("BUTTON PRESSED");
+				//System.out.println("BUTTON PRESSED");
 				playerCount = list.getSelectionIndex() + 2;
 				data.setCount(playerCount);
 				data.addName(getP1Name());
