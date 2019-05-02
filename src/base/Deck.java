@@ -66,9 +66,9 @@ public class Deck extends cardZone {
 		Card temp;
 	    Random random = new Random();
 	    
-	    for (int i = cardList.size(); i > 0; i--)
+	    for (int i = cardList.size() - 1; i > 0; i--)
 	    {
-	        index = random.nextInt(i + 1);
+	        index = random.nextInt(i);
 	        temp = cardList.get(index);
 	        cardList.set(index, cardList.get(i));
 	        cardList.set(i, temp);
