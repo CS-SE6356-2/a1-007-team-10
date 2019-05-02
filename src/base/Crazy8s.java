@@ -67,7 +67,7 @@ public class Crazy8s {
 	}
 
 	public boolean played8(Card played) {
-		if(played.getNumber() == 8){
+		if(played.getNumber() == 7){
 			return true;
 		}
 		return false;
