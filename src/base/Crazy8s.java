@@ -116,7 +116,7 @@ public class Crazy8s {
 
 			// Index of card they play
 			int choice = 0;
-			choice = cPlayer.getCard();
+
 			// Get player card selection
 			while(choice != -1) {
 				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
