@@ -150,6 +150,7 @@ public class Crazy8s {
 				// Valid card has been played, take next turn
 				break;
 			}
+			cPlayer = game.players.get(0);
 		} while(!game.isDone());
 		
 		/* old logic
