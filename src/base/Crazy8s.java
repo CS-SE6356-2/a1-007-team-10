@@ -193,6 +193,11 @@ public class Crazy8s {
 		// get score
 		// print score with master.message()
 
-		master.gameEnd(cPlayer.name);		
+		// print winner
+		for (int i = 0; i < playerCnt; i++) {
+			if (!game.getPlayer(i).hasCards()) {
+				master.gameEnd(game.getPlayer(i).name);		
+			}
+		}
 	}
 }
