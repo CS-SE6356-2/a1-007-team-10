@@ -55,6 +55,17 @@ public class Card {
 		return number;
 	}
 	
+	public boolean suitMatch(Card c) {
+		if(c.suit == suit)
+			return true;
+		return false;
+	}
+
+	public boolean numMatch(Card c) {
+		if(c.number == number)
+			return true;
+		return false;	}
+	
 	// Returns the image associated with this card
 	public Image getImage() {
 		return image;

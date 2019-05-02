@@ -35,7 +35,7 @@ public class Crazy8s {
 	// Returns true if any players hand is empty
 	public boolean isDone() {
 		for (int i = 0; i < players.size(); i++) {
-			if (getPlayer(i).hasCards()) {
+			if (!getPlayer(i).hasCards()) {
 				return true;
 			}
 		}
@@ -58,8 +58,20 @@ public class Crazy8s {
 		return null;
 	}
 
+	public boolean isValid(Card played) {
+		Card topCard = playPile.get(0);
+		if(played.suitMatch(topCard) || played.numMatch(topCard)) {
+			return true;
+		}
+		return false;
+	}
 	
-		
+	public boolean played8(Card played) {
+		if(played.getNumber() == 8){
+			return true;
+		}
+		return false;
+	}
 
 	// Main Method
 	public static void main(String[] args) {
@@ -100,12 +112,39 @@ public class Crazy8s {
 		//cPlayer.hand.print();
 
 		do {
+			// print who's turn it is
 			master.turnStart(cPlayer.name);
-			master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
 			
-			// more here
-			// check for play of 8
+			// index of card they play
+			int choice;
 			
+			// initial display
+			choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+			
+			// if -1, card was drawn
+			// repeat until can play
+			while(choice == -1) {
+				cPlayer.drawCard();
+				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+			}
+			
+			// card selected
+			Card move = cPlayer.hand.get(choice);
+			
+			// check for 8
+			if(game.played8(move)) {
+				master.wildcard();
+			}
+			
+			// check if valid move
+			while(!game.isValid(move)) {
+				master.message("Please select a valid move!");
+
+				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+				move = cPlayer.hand.get(choice);
+			}
+			cPlayer.playCard(move);
+
 			
 			cPlayer = game.nextPlayer(cPlayer);
 
@@ -115,6 +154,7 @@ public class Crazy8s {
 		
 		// get score
 		// print score with master.message()
+		
 		master.gameEnd(cPlayer.name);
 
 	}
