@@ -71,4 +71,10 @@ public class Card {
 		return image;
 	}
 	
+	public void setSuit(int i) {
+		suit = i;
+		image = SWTResourceManager.getImage(Card.class, "/images/" + number + '_'+ suit + ".png");
+		
+	}
+	
 }

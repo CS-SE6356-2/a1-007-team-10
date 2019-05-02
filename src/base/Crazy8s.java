@@ -143,7 +143,11 @@ public class Crazy8s {
 
 				// If an 8 is played, do not need to check for validity
 				if(game.played8(move)) {
-					master.wildcard();
+					int newSuit = 0;
+					
+					newSuit = master.wildcard();
+					
+					move.setSuit(newSuit);
 				}
 				// Check if valid move
 				else if(!game.isValid(move)) {
