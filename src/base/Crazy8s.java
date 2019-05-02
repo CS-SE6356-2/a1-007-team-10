@@ -61,7 +61,7 @@ public class Crazy8s {
 	// Plays the game
 	public void playGame() {
 		GuiMaster master = new GuiMaster();
-		master.gameStart();
+		//master.gameStart();
 		
 
 		// Filling player decks
