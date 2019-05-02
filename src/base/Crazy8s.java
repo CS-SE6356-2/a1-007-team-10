@@ -68,7 +68,7 @@ public class Crazy8s {
 		int playerCnt = master.getPlayerCount();
 		
 		// get player names
-		ArrayList<String> names = master.data.getNames();
+		ArrayList<String> names = master.getNameList();
 		for(int i = 0; i < playerCnt; i++) {
 			game.addPlayer(names.get(i)); 
 		}
