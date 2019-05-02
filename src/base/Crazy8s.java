@@ -78,14 +78,14 @@ public class Crazy8s {
 		if(playerCnt == 2) {
 			for(int i = 0; i < 2; i++) {
 				for(int j = 0; j < 7; j++) {
-					game.drawPile.draw(game.players.get(i).hand);
+					game.players.get(i).drawCard();
 				}
 			}
 		} // otherwise each starts with 5 cards
 		else {
 			for(int i = 0; i < playerCnt; i++) {
 				for(int j = 0; j < 5; j++) {
-					game.drawPile.draw(game.players.get(i).hand);
+					game.players.get(i).drawCard();
 				}
 			}
 		}
