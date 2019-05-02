@@ -47,7 +47,14 @@ public class cardZone {
 	
 	// Returns true if the specified card exists and was moved to the specified zone, false otherwise
 	public boolean moveCardTo(Card c, cardZone cz) {
-		//TODO
+		// check if in cardList
+		for(int i = 0; i < size(); i++) {
+		if(cardList.get(i) == c) {
+			Card tmp = cardList.remove(i); 
+			cz.addCard(tmp);
+			return true;
+		}
+		}
 		return false;
 	}
 	

@@ -51,12 +51,14 @@ public class Deck extends cardZone {
 	}
 	
 
-	public Card checkTop(Player player) {
+	public Card checkTop() {
+		topCard = cardList.get(0);
 		return topCard;
 	}
 	
 
-	public Card checkBottom(Player player) {
+	public Card checkBottom() {
+		bottomCard = cardList.get(cardList.size() - 1);
 		return bottomCard;
 	}
 	

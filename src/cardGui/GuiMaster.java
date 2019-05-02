@@ -8,7 +8,7 @@ import base.Card;
 
 public class GuiMaster {
 
-	public GameData data;
+	GameData data;
 	public GuiMaster()
 	{
 		GuiAppWindow win = new GuiAppWindow();

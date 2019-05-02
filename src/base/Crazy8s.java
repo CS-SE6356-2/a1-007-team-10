@@ -65,10 +65,12 @@ public class Crazy8s {
 	public static void main(String[] args) {
 		GuiMaster master = new GuiMaster();
 		Crazy8s game = new Crazy8s(); 
+		
+		// get player count
 		int playerCnt = master.getPlayerCount();
 		
 		// get player names
-		ArrayList<String> names = master.data.getNames();
+		ArrayList<String> names = master.getNameList();
 		for(int i = 0; i < playerCnt; i++) {
 			game.addPlayer(names.get(i)); 
 		}
@@ -89,7 +91,30 @@ public class Crazy8s {
 				}
 			}
 		}
+		
+		// first card to playPile
+		game.drawPile.moveCardTo(game.drawPile.checkTop(), game.playPile);
+		
+		// set first player
+		Player cPlayer = game.players.get(0);
 
-	
+		do {
+			master.turnStart(cPlayer.name);
+			master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+			
+			// more here
+			// check for play of 8
+			
+			
+			cPlayer = game.nextPlayer(cPlayer);
+
+		}while(!game.isDone());
+		
+		
+		
+		// get score
+		// print score with master.message()
+		master.gameEnd(cPlayer.name);
+
 	}
 }
