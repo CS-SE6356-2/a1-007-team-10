@@ -36,7 +36,6 @@ public class GuiMaster {
 		//data = new GameData();
 		data.setTurnName(name);
 		win.open(data);
-		
 	}
 	
 	public int turn(String name, Hand playerHand, Card topCard, int deckSize, int discardSize) { //returns index in hand that they play, -1 if they draw a card

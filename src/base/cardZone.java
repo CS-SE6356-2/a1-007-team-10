@@ -40,11 +40,11 @@ public class cardZone {
 		return cardList.add(c);
 	}
 
-	// Moves all cards from this zone to the specified zone
+	/*// Moves all cards from this zone to the specified zone
 	public boolean moveAllTo(cardZone cz) {
 		//TODO
 		return false;
-	}
+	}*/
 
 	// Returns true if the specified card exists and was moved to the specified zone, false otherwise
 	public boolean moveCardTo(Card c, cardZone cz) {

@@ -1,4 +1,5 @@
 package base;
+import cardGui.GameData;
 
 public class Player {
 	// Fields
@@ -6,6 +7,7 @@ public class Player {
 	public Hand hand;
 	private Deck drawPile;
 	private cardZone playPile;
+	private GameData topCard;
 	
 	
 	// Constructors
@@ -40,8 +42,12 @@ public class Player {
 
 	// Returns the card the player decided to play
 	// Should interface with the GUI
-	public Card play() {
+/*	public Card play(Card c) {
 		return null;
+	}*/
+	
+	public int getCard() {
+		return 0;
 	}
 	
 	// Returns the name of this player
@@ -51,8 +57,19 @@ public class Player {
 	
 	//this method will need to calculate score based on cards in hand
 	public int getScore() {
-		//TODO
-		return -1;
+		int sum = 0;
+		for (int i = 0; i < hand.size(); i++) {
+			Card card = hand.get(i);
+			int rank = card.getNumber();
+			if (rank == 8) {
+				sum -= 20;
+			} else if (rank > 10) {
+				sum -= 10;
+			} else {
+				sum -= rank;
+			}
+		}
+		return sum;
 	}
 	
 	public String toString() {

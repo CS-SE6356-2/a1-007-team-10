@@ -44,11 +44,11 @@ public class Card {
 		return suit;
 	}
 	
-	// what is the purpose of passing a player here?
+	/*// what is the purpose of passing a player here?
 	public int getSuit(Player p) {
 		//TODO
 		return suit;
-	}
+	}*/
 	
 	// Returns the integer representation of the number of this card
 	public int getNumber() {

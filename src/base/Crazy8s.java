@@ -113,46 +113,46 @@ public class Crazy8s {
 
 		do {
 			// Print who's turn it is
-			master.turnStart(cPlayer.name);
 
 			// Index of card they play
-			int choice;
-
+			int choice = 0;
+			choice = cPlayer.getCard();
 			// Get player card selection
-			while(true /* I dont like this */) {
-                choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+			while(choice != -1) {
+				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
 
-                // If they draw, keep doing the loop
-                if(choice == -1) {
-                    cPlayer.drawCard();
-                    continue;
-                }
+				// If they draw, keep doing the loop
+				if(choice == -1) {
+					cPlayer.drawCard();
+					continue;
+				}
 
-                // Card selected
-                Card move = cPlayer.hand.get(choice);
+				// Card selected
+				Card move = cPlayer.hand.get(choice);
 
-                // If an 8 is played, do not need to check for validity
-                if(game.played8(move)) {
-                    master.wildcard();
-                }
-                // Check if valid move
-                else if(!game.isValid(move)) {
-                    // If it is invalid, skip playing the card
-                    master.message("Please select a valid move!");
-                    continue;
-                }
+				// If an 8 is played, do not need to check for validity
+				if(game.played8(move)) {
+					master.wildcard();
+				}
+				// Check if valid move
+				else if(!game.isValid(move)) {
+					// If it is invalid, skip playing the card
+					master.message("Please select a valid move!");
+					continue;
+				}
 
-                // Play correct card
-                cPlayer.playCard(move);
+				// Play correct card
+				cPlayer.playCard(move);
 
-                // Get next player
-                cPlayer = game.nextPlayer(cPlayer);
+				// Get next player
+				cPlayer = game.nextPlayer(cPlayer);
 
-                // Valid card has been played, take next turn
-                break;
+				// Valid card has been played, take next turn
+				break;
 			}
-
-			/* old logic
+		} while(!game.isDone());
+		
+		/* old logic
 			// If -1, card was drawn
 			// Repeat until can play
 			while(choice == -1) {
@@ -179,16 +179,10 @@ public class Crazy8s {
             cPlayer.playCard(move);
 
 			cPlayer = game.nextPlayer(cPlayer);
-			*/
-
-		} while(!game.isDone());
-
-
-
+		 */
 		// get score
 		// print score with master.message()
 
-		master.gameEnd(cPlayer.name);
-
+		master.gameEnd(cPlayer.name);		
 	}
 }
