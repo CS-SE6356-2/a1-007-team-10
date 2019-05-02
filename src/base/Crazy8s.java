@@ -127,7 +127,9 @@ public class Crazy8s {
 				// If they draw, keep doing the loop
 				if(choice == -1) {
 					cPlayer.drawCard();
-					continue;
+					//continue;
+					cPlayer = game.nextPlayer(cPlayer);
+					break;
 				}
 
 				if(choice >= cPlayer.hand.size())
