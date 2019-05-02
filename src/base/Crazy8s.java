@@ -85,7 +85,7 @@ public class Crazy8s {
 		ArrayList<String> names = master.getNameList();
 		for(int i = 0; i < playerCnt; i++) {
 			game.addPlayer(names.get(i));
-			System.out.println(names.get(i));
+			//System.out.println(names.get(i));
 		}
 
 		// Filling player hands
