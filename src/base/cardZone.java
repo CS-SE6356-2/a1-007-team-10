@@ -68,10 +68,12 @@ public class cardZone {
 		return cardList.size() == 0;
 	}
 	
-	public String toString() {
-		return label + ": " + cardList.toString();
+	public void print() {
+		//return label + ": " + cardList.toString();
+		for(int i = 0; i < size(); i++) {
+		System.out.println(cardList.get(i).getNumber() + ", " + cardList.get(i).getSuit());
+		}
 	}
-	
 	public Card get(int i) {
 		return cardList.get(i);
 	}

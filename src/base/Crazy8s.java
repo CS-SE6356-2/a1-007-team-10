@@ -97,6 +97,7 @@ public class Crazy8s {
 		
 		// set first player
 		Player cPlayer = game.players.get(0);
+		//cPlayer.hand.print();
 
 		do {
 			master.turnStart(cPlayer.name);
