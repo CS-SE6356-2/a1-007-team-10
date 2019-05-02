@@ -58,43 +58,44 @@ public class Crazy8s {
 		return null;
 	}
 	
-	// Plays the game
-	public void playGame() {
-		GuiMaster master = new GuiMaster();
-		master.gameStart();
-		
-
-		// Filling player decks
-		// if two players, each starts with 7 cards
-		if(master.getPlayerCount() == 2) {
-			for(int i = 0; i < 2; i++) {
-				for(int j = 0; j < 7; j++) {
-					drawPile.draw(players.get(i).hand);
-				}
-			}
-		} // otherwise each starts with 5 cards
-		else {
-			for(int i = 0; i < master.getPlayerCount(); i++) {
-				for(int j = 0; j < 5; j++) {
-					drawPile.draw(players.get(i).hand);
-				}
-			}
-		}
-		// Main game loop
-		while(!isDone()) {
-			//master.nextState();
-		}
-		
-		// if another game is going to be played, master calls playGame again
-	}
 	
 	
 	// Main Method
 	public static void main(String[] args) {
+		Crazy8s game = new Crazy8s(); 
 		GuiMaster master = new GuiMaster();
 		//System.out.println(master.getPlayerCount()/* + ' ' + master.getNameList().get(0)*/);
 		//master.turnStart("nametest");
-		
 		//master.message("This is my test message This is my test message This is my test message This is my test message ");
+		
+		// get player count
+		int playerCount = master.getPlayerCount();
+		
+		// get player names
+		ArrayList<String> names = master.data.getNames();
+		for(int i = 0; i < playerCount; i++) {
+			game.addPlayer(names.get(i)); 
+		}
+		
+		// Filling player decks
+		// if two players, each starts with 7 cards
+		if( playerCount == 2) {
+			for(int i = 0; i < 2; i++) {
+				for(int j = 0; j < 7; j++) {
+					game.drawPile.draw(game.players.get(i).hand);
+				}
+			}
+		} // otherwise each starts with 5 cards
+		else {
+			for(int i = 0; i < playerCount; i++) {
+				for(int j = 0; j < 5; j++) {
+					game.drawPile.draw(game.players.get(i).hand);
+				}
+			}
+		}
+		// Main game loop
+		while(!game.isDone()) {
+			//master.nextState();
+		}
 	}
 }
