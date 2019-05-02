@@ -65,7 +65,7 @@ public class Crazy8s {
 		}
 		return false;
 	}
-	
+
 	public boolean played8(Card played) {
 		if(played.getNumber() == 8){
 			return true;
@@ -76,26 +76,26 @@ public class Crazy8s {
 	// Main Method
 	public static void main(String[] args) {
 		GuiMaster master = new GuiMaster();
-		Crazy8s game = new Crazy8s(); 
-		
+		Crazy8s game = new Crazy8s();
+
 		// get player count
 		int playerCnt = master.getPlayerCount();
-		
+
 		// get player names
 		ArrayList<String> names = master.getNameList();
 		for(int i = 0; i < playerCnt; i++) {
-			game.addPlayer(names.get(i)); 
+			game.addPlayer(names.get(i));
 		}
 
-		// Filling player decks
-		// if two players, each starts with 7 cards
+		// Filling player hands
+		// If two players, each starts with 7 cards
 		if(playerCnt == 2) {
 			for(int i = 0; i < 2; i++) {
 				for(int j = 0; j < 7; j++) {
 					game.players.get(i).drawCard();
 				}
 			}
-		} // otherwise each starts with 5 cards
+		} // Otherwise each starts with 5 cards
 		else {
 			for(int i = 0; i < playerCnt; i++) {
 				for(int j = 0; j < 5; j++) {
@@ -103,39 +103,39 @@ public class Crazy8s {
 				}
 			}
 		}
-		
-		// first card to playPile
+
+		// First card to playPile
 		game.drawPile.moveCardTo(game.drawPile.checkTop(), game.playPile);
-		
-		// set first player
+
+		// Set first player
 		Player cPlayer = game.players.get(0);
 		//cPlayer.hand.print();
 
 		do {
-			// print who's turn it is
+			// Print who's turn it is
 			master.turnStart(cPlayer.name);
-			
-			// index of card they play
+
+			// Index of card they play
 			int choice;
-			
-			// initial display
+
+			// Initial display
 			choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
-			
-			// if -1, card was drawn
-			// repeat until can play
+
+			// If -1, card was drawn
+			// Repeat until can play
 			while(choice == -1) {
 				cPlayer.drawCard();
 				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
 			}
-			
-			// card selected
+
+			// Card selected
 			Card move = cPlayer.hand.get(choice);
-			
-			// check for 8
+
+			// Check for 8
 			if(game.played8(move)) {
 				master.wildcard();
 			}
-			
+
 			// check if valid move
 			while(!game.isValid(move)) {
 				master.message("Please select a valid move!");
@@ -145,16 +145,16 @@ public class Crazy8s {
 			}
 			cPlayer.playCard(move);
 
-			
+
 			cPlayer = game.nextPlayer(cPlayer);
 
-		}while(!game.isDone());
-		
-		
-		
+		} while(!game.isDone());
+
+
+
 		// get score
 		// print score with master.message()
-		
+
 		master.gameEnd(cPlayer.name);
 
 	}
