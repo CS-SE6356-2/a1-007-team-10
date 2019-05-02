@@ -118,9 +118,41 @@ public class Crazy8s {
 			// Index of card they play
 			int choice;
 
-			// Initial display
-			choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+			// Get player card selection
+			while(true /* I dont like this */) {
+                choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
 
+                // If they draw, keep doing the loop
+                if(choice == -1) {
+                    cPlayer.drawCard();
+                    continue;
+                }
+
+                // Card selected
+                Card move = cPlayer.hand.get(choice);
+
+                // If an 8 is played, do not need to check for validity
+                if(game.played8(move)) {
+                    master.wildcard();
+                }
+                // Check if valid move
+                else if(!game.isValid(move)) {
+                    // If it is invalid, skip playing the card
+                    master.message("Please select a valid move!");
+                    continue;
+                }
+
+                // Play correct card
+                cPlayer.playCard(move);
+
+                // Get next player
+                cPlayer = game.nextPlayer(cPlayer);
+
+                // Valid card has been played, take next turn
+                break;
+			}
+
+			/* old logic
 			// If -1, card was drawn
 			// Repeat until can play
 			while(choice == -1) {
@@ -131,22 +163,23 @@ public class Crazy8s {
 			// Card selected
 			Card move = cPlayer.hand.get(choice);
 
-			// Check for 8
+			// If an 8 is played, do not need to check for validity
 			if(game.played8(move)) {
 				master.wildcard();
 			}
+            else {
+                // Check if valid move
+                while(!game.isValid(move)) {
+                    master.message("Please select a valid move!");
 
-			// check if valid move
-			while(!game.isValid(move)) {
-				master.message("Please select a valid move!");
-
-				choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
-				move = cPlayer.hand.get(choice);
-			}
-			cPlayer.playCard(move);
-
+                    choice = master.turn(cPlayer.name, cPlayer.hand, game.playPile.get(0), game.drawPile.size(), game.playPile.size());
+                    move = cPlayer.hand.get(choice);
+                }
+            }
+            cPlayer.playCard(move);
 
 			cPlayer = game.nextPlayer(cPlayer);
+			*/
 
 		} while(!game.isDone());
 
