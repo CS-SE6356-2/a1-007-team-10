@@ -18,7 +18,12 @@ public class GuiPlayArea extends GuiObject {
 	 */
 	public GuiPlayArea(Composite parent, int style, GameData data) {
 		super(parent, SWT.BORDER);
-		
+		/*//Prints the hand contents
+		for(int i = 0; i < data.getHand().size(); i++)
+		{
+			System.out.println("Number: " + data.getHand().get(i).getNumber() + " suit: " + data.getHand().get(i).getSuit());
+		}
+		*/
 		Label title = new Label(this, SWT.NONE);
 		title.setBounds(10, 10, 55, 15);
 		title.setText("Crazy 8s");
