@@ -21,9 +21,9 @@ public class Card {
 		image = SWTResourceManager.getImage(Card.class, "/images/" + n + '_'+ s + ".png");
 		/*
 		 * Aces 	= 	0
-		 * jack 	= 	11
-		 * king 	= 	13
-		 * queen	= 	12
+		 * jack 	= 	10
+		 * king 	= 	12
+		 * queen	= 	11
 		 * 
 		 * clubs 	= 	0
 		 * diamonds =	1
